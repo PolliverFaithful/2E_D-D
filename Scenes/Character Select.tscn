@@ -1,0 +1,676 @@
+[gd_scene load_steps=10 format=3 uid="uid://vbjtndxsp43t"]
+
+[ext_resource type="Script" uid="uid://dq05frwvjrcx5" path="res://Scripts/Completed Sheets/Character_Sheet.gd" id="1_lmua5"]
+[ext_resource type="Texture2D" uid="uid://do1fc6qtxrxvj" path="res://Images/Backgrounds/parchmentFoldedCrinkled.png" id="2_nlal8"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="3_sjcq7"]
+[ext_resource type="FontFile" uid="uid://csbvktjhamhsr" path="res://Fonts/LinLibertine_RI.otf" id="4_wfpjm"]
+[ext_resource type="Texture2D" uid="uid://b6jrk5oi4yrw5" path="res://Images/Buttons/arrowHead.png" id="5_nlal8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0evpa"]
+texture = ExtResource("2_nlal8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mncro"]
+bg_color = Color(0.658824, 0.596078, 0.407843, 0.631373)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjcq7"]
+
+[sub_resource type="GDScript" id="GDScript_wfpjm"]
+script/source = "extends Button
+"
+
+[node name="Character Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lmua5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0evpa")
+
+[node name="Character Sheet Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.0
+offset_right = 155.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sjcq7")
+theme_override_font_sizes/font_size = 40
+text = "Character Sheet"
+
+[node name="Player Stats" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -520.0
+offset_top = 183.0
+offset_right = -371.0
+offset_bottom = 225.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sjcq7")
+theme_override_font_sizes/font_size = 25
+text = "Attributes"
+
+[node name="Stats" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -103.0
+offset_right = 92.0
+offset_bottom = 103.0
+grow_vertical = 2
+
+[node name="STR" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Strength:"
+
+[node name="DEX" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Dexterity:"
+
+[node name="CON" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Constitution:"
+
+[node name="INT" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Intelligence:"
+
+[node name="WIS" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Wisdom:"
+
+[node name="CHR" type="Label" parent="Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Charisma:"
+
+[node name="Stat Scores" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 220.0
+offset_right = 170.0
+offset_bottom = 420.0
+
+[node name="STR_Score" type="Label" parent="Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="DEX_Score" type="Label" parent="Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="CON_Score" type="Label" parent="Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="INT_Score" type="Label" parent="Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="WIS_Score" type="Label" parent="Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="CHR_Score" type="Label" parent="Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="Deduct Stat Point" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 225.0
+offset_right = 210.0
+offset_bottom = 419.0
+
+[node name="STR Deduct" type="Button" parent="Deduct Stat Point"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "-"
+
+[node name="DEX Deduct" type="Button" parent="Deduct Stat Point"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "-"
+
+[node name="CON Deduct" type="Button" parent="Deduct Stat Point"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "-"
+
+[node name="INT Deduct" type="Button" parent="Deduct Stat Point"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "-"
+
+[node name="WIS Deduct" type="Button" parent="Deduct Stat Point"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "-"
+
+[node name="CHR Deduct" type="Button" parent="Deduct Stat Point"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "-"
+
+[node name="Add Stat Point2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 225.0
+offset_right = 253.0
+offset_bottom = 419.0
+
+[node name="STR Add" type="Button" parent="Add Stat Point2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "+"
+
+[node name="DEX Add" type="Button" parent="Add Stat Point2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "+"
+
+[node name="CON Add" type="Button" parent="Add Stat Point2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "+"
+
+[node name="INT Add" type="Button" parent="Add Stat Point2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "+"
+
+[node name="WIS Add" type="Button" parent="Add Stat Point2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "+"
+
+[node name="CHR Add" type="Button" parent="Add Stat Point2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mncro")
+text = "+"
+
+[node name="Stat_Point_Pool" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 444.0
+offset_right = 149.0
+offset_bottom = 474.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Pts Remaining:"
+
+[node name="Stat_Point_Pool_Value" type="Label" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 445.0
+offset_right = 196.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "18"
+
+[node name="Experience Variables" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 42.0
+offset_right = 1121.0
+offset_bottom = 106.0
+
+[node name="EXP to Level Variable" type="Label" parent="Experience Variables"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="EXP Variable" type="Label" parent="Experience Variables"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Experience" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 41.0
+offset_right = 1069.0
+offset_bottom = 105.0
+
+[node name="EXP to Level" type="Label" parent="Experience"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Exp to Level:"
+
+[node name="EXP" type="Label" parent="Experience"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Current Exp:"
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 10.0
+offset_right = 1042.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Level:"
+
+[node name="Level Variable" type="Label" parent="Level"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Race" type="Label" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 92.0
+offset_right = 91.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Race:"
+
+[node name="GD PC Race" type="Label" parent="Race"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "None"
+
+[node name="Class" type="Label" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 92.0
+offset_right = 314.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Class:"
+
+[node name="GD PC Class" type="Label" parent="Class"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "None"
+
+[node name="Saving Throws Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 303.0
+offset_top = 279.0
+offset_right = 514.0
+offset_bottom = 324.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sjcq7")
+theme_override_font_sizes/font_size = 25
+text = "Saving Throws"
+
+[node name="Saving Throws" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 842.0
+offset_top = 1.0
+offset_right = 1125.0
+offset_bottom = 235.0
+grow_vertical = 2
+
+[node name="Spell" type="Label" parent="Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Spell:"
+horizontal_alignment = 1
+
+[node name="Paralyzation" type="Label" parent="Saving Throws"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Paralyzation:"
+horizontal_alignment = 1
+
+[node name="Rod Staff Wand" type="Label" parent="Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Rod, Staff, Wand:"
+horizontal_alignment = 1
+
+[node name="Petrify Poly" type="Label" parent="Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Petrification/Polymorph:"
+horizontal_alignment = 1
+
+[node name="Breath Wpn" type="Label" parent="Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Breath Weapon:"
+horizontal_alignment = 1
+
+[node name="Poison" type="Label" parent="Saving Throws"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Poison:"
+horizontal_alignment = 1
+
+[node name="Death" type="Label" parent="Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Death:"
+horizontal_alignment = 1
+
+[node name="Saving Throw Scores" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 326.0
+offset_right = 1145.0
+offset_bottom = 560.0
+
+[node name="Spell Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "19"
+
+[node name="Paralyzation Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="Rod Staff Wand Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "18"
+
+[node name="Petrify Poly Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "17"
+
+[node name="Breath Wpn Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "20"
+
+[node name="Poison Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="Death Score" type="Label" parent="Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="Max HP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 171.0
+offset_right = 1106.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Maximum Hit Points:"
+
+[node name="Max HP Score" type="Label" parent="Max HP"]
+layout_mode = 0
+offset_left = 221.0
+offset_right = 232.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Armor Class" type="Label" parent="."]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 128.0
+offset_right = 1063.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "Armor Class:"
+
+[node name="AC Score" type="Label" parent="Armor Class"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 162.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfpjm")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.999878
+offset_top = -65.0
+offset_right = 63.0001
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.55867
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sjcq7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sjcq7")
+icon = ExtResource("5_nlal8")
+script = SubResource("GDScript_wfpjm")
+
+[connection signal="pressed" from="Deduct Stat Point/STR Deduct" to="." method="_on_str_deduct_pressed"]
+[connection signal="pressed" from="Deduct Stat Point/DEX Deduct" to="." method="_on_dex_deduct_pressed"]
+[connection signal="pressed" from="Deduct Stat Point/CON Deduct" to="." method="_on_con_deduct_pressed"]
+[connection signal="pressed" from="Deduct Stat Point/INT Deduct" to="." method="_on_int_deduct_pressed"]
+[connection signal="pressed" from="Deduct Stat Point/WIS Deduct" to="." method="_on_wis_deduct_pressed"]
+[connection signal="pressed" from="Deduct Stat Point/CHR Deduct" to="." method="_on_chr_deduct_pressed"]
+[connection signal="pressed" from="Add Stat Point2/STR Add" to="." method="_on_str_add_pressed"]
+[connection signal="pressed" from="Add Stat Point2/DEX Add" to="." method="_on_dex_add_pressed"]
+[connection signal="pressed" from="Add Stat Point2/CON Add" to="." method="_on_con_add_pressed"]
+[connection signal="pressed" from="Add Stat Point2/INT Add" to="." method="_on_int_add_pressed"]
+[connection signal="pressed" from="Add Stat Point2/WIS Add" to="." method="_on_wis_add_pressed"]
+[connection signal="pressed" from="Add Stat Point2/CHR Add" to="." method="_on_chr_add_pressed"]

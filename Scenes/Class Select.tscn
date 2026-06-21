@@ -1,0 +1,642 @@
+[gd_scene load_steps=11 format=3 uid="uid://bbe3owk2icgab"]
+
+[ext_resource type="Script" uid="uid://btx5mx8dm457c" path="res://Scripts/Completed Sheets/Class_Select.gd" id="1_nkfho"]
+[ext_resource type="Texture2D" uid="uid://dlj8r2vigna78" path="res://Images/Backgrounds/parchmentBasic.png" id="2_sua6h"]
+[ext_resource type="FontFile" uid="uid://csbvktjhamhsr" path="res://Fonts/LinLibertine_RI.otf" id="3_su20x"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="4_kf8no"]
+[ext_resource type="Texture2D" uid="uid://b6jrk5oi4yrw5" path="res://Images/Buttons/arrowHead.png" id="5_flwf0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i83cd"]
+texture = ExtResource("2_sua6h")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0huu"]
+bg_color = Color(0.647059, 0.603922, 0.407843, 0.439216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkwtt"]
+bg_color = Color(0, 0, 0, 0.756863)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ordvm"]
+
+[sub_resource type="GDScript" id="GDScript_x630o"]
+script/source = "extends Button
+"
+
+[node name="Class Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nkfho")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i83cd")
+
+[node name="Class Options" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 57.0
+offset_right = 324.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/panel = SubResource("StyleBoxFlat_l0huu")
+theme_override_styles/hovered_selected = SubResource("StyleBoxFlat_kkwtt")
+item_count = 10
+max_columns = 2
+same_column_width = true
+fixed_column_width = 109
+item_0/text = "Fighter"
+item_1/text = "Paladin"
+item_2/text = "Ranger"
+item_3/text = "Thief"
+item_4/text = "Bard"
+item_5/text = "Priest"
+item_6/text = "Cleric"
+item_7/text = "Druid"
+item_8/text = "Mage"
+item_9/text = "Wizard"
+
+[node name="Character Selection Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 2.0
+offset_right = 1084.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kf8no")
+theme_override_font_sizes/font_size = 50
+text = "Character Selection"
+
+[node name="Fighter Flavor Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 112.0
+offset_right = 1135.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     The backbone to any combat unit, the Fighter is indispensable. Though other classes may be 
+concerned with leveraging religious favor or magical manipulation of the battlefield, Fighters concern 
+themselves with tactics. Armaments, formations, flanking, ambush; these are the bread and butter 
+of the Fighter.
+     A Fighter wishes to meet his enemy in hand to hand combat and is unlimited in weapon choice. 
+Similarly, a Fighter can use any pieces of armor he can afford or find. Fighters are awarded for 
+prioritizing Strength and Constitution, though Dexterity is not a waste. Sturdy and proficient in melee, 
+Fighters establish the frontline in battle and are necessary to exert a line of control.
+     No other class enjoys as many advantages when it comes to standing your ground and going blow 
+for blow with the enemy. The moniker of Fighter spans from common farmer armed and raised by a 
+lord into soldiery to dedicated knight trained with sword and shield since an early age. As such, 
+Fighters are ubiquitous across the world. No matter the culture or creed, every successful civilization 
+has a reliable force of Fighters."
+
+[node name="Fighter Bonuses" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 303.0
+offset_right = 475.0
+offset_bottom = 608.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Fighter:
+
+- Gain 1d10 Hit Points upon Level-up.
+
+- +1 to Initiative Rolls (Initiative is a 1d10 roll).
+
+- Gain a Weapon Proficiency every Level-up.
+
+- Gain an extra attack, every other round, at Levels 5, 9, and 13.
+
+- THAC0 improves at a rate of 1 per Level.
+
+- Access to all Weapons and Armors without penalty.
+"
+
+[node name="Paladin Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 477.0
+offset_top = 85.0
+offset_right = 1144.0
+offset_bottom = 632.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     Paladins are the embodiment of divine retribution. Disinterested in the theological debate that 
+effuses monasteries and temples, the Paladin is interested only in enacting religious justice on his 
+environs. Such rigid ideology inevitably leads to conflict and the Paladin revels in the opportunity to 
+solve such conflict with violence. As such, Paladins are accomplished warriors, and the divine powers 
+with which they are equipped are attuned to such an end.
+     Paladins are typically made one of two ways. The first is internally within a monastery or temple. 
+A Priest, or more rarely Cleric, becomes so frustrated with the lifestyle and relative inaction of the 
+peaceable church that he/she decides to strike out from such comforts in search of areas where 
+discordance is the norm. Once in an area of evil, the Paladin is able \"to do the most good\" by stamping 
+out wickedness. Outfitting a Paladin is no small expense and a temple will not do so without the 
+candidate proving unusually gifted in combat. 
+     The second, and more likely scenario, is that of the knight. Trained in warfare from an early age, 
+the knight turned Paladin has an unusual conscious. One that is burdened by waging war on the whim 
+of a lord. In this moral crisis the knight swears himself to the church and a Paladin is born. 
+     Though either scenario may paint the Paladin in a negative light, let it be known that the status of 
+Paladin cannot be acquired falsely. Just as in Priests and Clerics, Paladins share a divine relationship 
+with a Deity, from whom their powers are derived. If this relationship is ever reneged upon, the status 
+of Paladin is swiftly revoked. Due to the extreme nature of a Paladin's mandate, Paladins are held to an 
+abnormally high standard by their Deity, and very little deviation is tolerated. Any Paladin revoked 
+of his/her status immediately loses all divine powers and is reduced to a Fighter at half his/her previous 
+level. Remediation can be attempted but success is rare.
+     With such strict edicts and theology, Paladins are often revered and simultaneously feared. Most 
+persons shy away from Paladins and this usual reaction only differs in times of extreme need. When such 
+dire situations do arise, a Paladin is treated much like a King, with villagers and lords alike 
+acquiescing to their every request."
+
+[node name="Paladin Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 289.0
+offset_right = 461.0
+offset_bottom = 638.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Paladin:
+
+- Gain 1d10 Hit Points upon Level-up.
+- +2 to Saving Throws vs Death, Poison, Paralyzation,
+  Petrification & Polymorph.
+- Constantly emanate an Aura of Protection to 10ft,
+  All enemy combatants receive -1 to-hit.
+- The ability to Detect Evil within 60ft at will.
+- Immunity to disease and the ability to cure it in others once per week.
+- THAC0 improves at a rate of 1 per Level.
+- Lay on Hands which heals 3hp per level once a day.
+- The ability to Turn Undead at Level 3.
+- The ability to cast Spells as a Priest at Level 7.
+- The Paladin may never own more than 10 Magical Items.
+- The Paladin must tithe 10% of all wealth once per month to a 
+  Temple, Monastery or other ecclesiastical body of good alignment."
+
+[node name="Ranger Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 469.0
+offset_top = 64.0
+offset_right = 1148.0
+offset_bottom = 639.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     The ultimate self-sufficient warrior, the Ranger is accustomed to life on the outskirts of civilization. 
+As such, the Ranger hunts his own food, builds his own shelter, and is responsible for his own safety. Each 
+day is spent roaming the acreage a Ranger considers home. The Ranger becomes very well accustomed to 
+this tract of land, and with little interaction with other intelligent life, the Ranger learns to read the 
+wildlife and landscape. What the Ranger cannot produce himself i.e., smithed goods, agricultural 
+foodstuffs, oils, etc., he trades for. Most Rangers are accomplished hunters, and the hides they bring to 
+market are often of the best quality around.
+     Rangers have other opportunities to make money though. Townspeople will occasionally seek him out to 
+look for a lost relative, guardsmen may pay the hunter to track bandits for them, and the astute Ranger 
+will know when he is witness to information someone is willing to pay for. Some Rangers are born of the 
+local woodsman recruited by local lord to flank his army and act as a scout, spending each night camped 
+between the opposing forces. These factors combine to create a compellingly competent individual.
+     With so many days spent tracking in the wild, Rangers have developed an attunement to the natural 
+world. They move as lithely and quietly as a skilled burglar when in the wild. Such mastery over the body 
+extends to the hands, and they are able to dual-wield weapons without penalty (note that the 
+encumbrance of heavy armors can negate such agility). Nearly all Rangers cut their teeth with a specific 
+enemy and have intimately studied their habits and fighting styles. Rangers are unmatched when fighting 
+these foes. Rangers natural attunement extends also to animal life. They understand how to soothe and 
+interact with animals implicitly. Rangers even become able to cast limited Druid spells, should they live 
+long enough. Whether this too is implicit or aided by an admiring Druid or Dryad, is a secret 
+most Rangers take to their grave.
+     Such willing isolation does take its toll. The chaos of a city, even a small bustling town, is something a 
+Ranger cannot grow accustomed to. Even the unconscious actions of regular people weigh on a Ranger. 
+There is no greater pet peeve to a skilled Ranger than the reckless footfalls of a companion that ruin 
+the hunt. The Ranger is unable to have, hired or otherwise, any henchmen. This is why you will 
+never find a lord, lady or dignitary who is a Ranger."
+
+[node name="Ranger Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 22.0
+offset_top = 302.0
+offset_right = 460.0
+offset_bottom = 617.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Ranger:
+
+- Gain 1d10 Hit Points upon Level-up.
+
+- Dual-wield weapons without penalty unless wearing metal armor.
+
+- Proficiency in Animal Handling, Tracking, and Hunting.
+
+- 10% Hide in Shadows & 15% Move Silently when outdoors, these
+  abilities scale with level.
+
+- THAC0 improves at a rate of 1 per Level.
+
+- Access to Plant & Animal Sphere Priest Spells at level 4."
+
+[node name="Thief Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 518.0
+offset_top = 116.0
+offset_right = 1152.0
+offset_bottom = 459.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     Crafty, clever, and opportunistic the Thief comes in a variety of flavors. Some are forced into 
+larceny at an early age and grow accustomed to getting by with sleight of hand. Others find this 
+calling via organized banditry after falling on tough times. Some Thieves even have an honest
+conscious, being taught their craft by dungeon explorers and woodland scouts. However the art is 
+learned, the Thief has an extensive toolkit able to tackle an extensive variety of situations.
+     Often quick-witted when faced with hostility, the Thief specializes in disguising intentions until 
+the situation can be manipulated into his/her favor. If forced into hand-to-hand combat, the Thief's 
+unusual hand-eye coordination makes them a tricky combatant, but attack from concealment is the
+Thief's preferred method should violence prove necessary. A dagger from the dark is particularly 
+deadly when wielded by a Thief.
+     Within a party, the Thief's value is in his/her utility. In a lead role, the Thief can ply ahead of the 
+party checking for traps and concealed corridors. Locked chests and doors can be opened with pins 
+and hooks. Closed doors and blind corners can be listened to with an acute ear. Some Thieves even 
+master the art of code-breaking. These skills, combined with the ability to lie concealed when setting 
+ambushes, make Thieves an integral part of many an adventuring party."
+
+[node name="Thief Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 9.0
+offset_top = 293.0
+offset_right = 504.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Thief:
+
+- Gain 1d6 Hit Points upon Level-up.
+
+- Thieving Skills: Pick Pockets, Open Locks, Climb Walls, Move Silently,
+  Hide in Shadows, Detect Noise, Read Languages Find/Remove Traps.
+  The starting values of these abilities is influenced by Race and Dexterity.
+
+- An additional +2 to-hit when attacking from the flank or behind.
+- An additional action in the surprise round of combat.
+- Ability to Backstab for double damage when wielding a dagger type weapon.
+  This multiplier increases by 1 every 4th Level-up.
+- THAC0 improves at a rate of 1 every other Level.
+- The ability to use scrolls based on Read Languages percentile.
+- Prohibited Weapons: Great Weapons and Polearms. 
+- Inability to wear Metal Armors."
+
+[node name="Bard Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 492.0
+offset_top = 97.0
+offset_right = 1153.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     Able to entertain an entire village one night and an altogether forgetful traveler the next, Bards bear
+a curious niche in society. Bards are experts at playing a \"role\". That role is often whatever is most 
+advantageous to the Bard at that exact moment in time and can change day to day or even conversation
+to conversation. Keeping each of these roles afloat, without having them crash into and contradict one 
+another, is what separates a talented Bard from the local dungeon.
+     It is true that many a Bard pays for meals and lodging with an act, whether it be poetry, song,
+acrobatics, or some other rehearsed talent. A good Bard, under the proper circumstances and 
+given adequate time to perform, can even inspire a group before battle. While such theatrical ability is 
+laudable, this outward facing persona does not detail a Bard's occupation.
+     A Bard is skilled in many the same ways a Thief is, and can perform the role adequately should need 
+arise. Bards also have the Intelligence and finesse required for some rudimentary ability with Magic and 
+can cast a limited number of spells in addition to cast scrolls.
+     In combat a Bard is similarly varied in experiences and is only barred from using great weapons. A
+Bard is also able to wear any armor excepting Plate. Bards are widely bilingual, and learned in their 
+culture's local history. Bards also have some ability to Identify magical items. Such ability grows 
+alongside a Bard's Spell Level. These boons are attributed to a Bard's familiarity with various cultures."
+
+[node name="Bard Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 11.0
+offset_top = 295.0
+offset_right = 474.0
+offset_bottom = 644.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Bard:
+
+- Gain 1d6 Hit Points upon Level-up.
+
+- Thieving Skills: Pick Pockets, Open Locks, Climb Walls, Move Silently,
+  Hide in Shadows, Detect Noise, Read Languages Find/Remove Traps.
+  Starting values of these abilities is influenced by Race and Dexterity.
+
+- Access to Mage spells from first level.
+- Fluency in High Cant as well as a language of the Bard's choice.
+- A musical instrument of choice, the ability to play it and sing.
+- The ability to Inspire before momentous battles:
+  Conveys +1 to Saving Throws, +1 to To-Hit, and +2 to Morale.
+- THAC0 improves at a rate of 1 every other Level.
+- The ability to use Scrolls and learn from Spell Tomes.
+- Ability to use all armor types and all weapons but Great."
+
+[node name="Priest Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 471.0
+offset_top = 119.0
+offset_right = 1137.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     Priests derive their spell-casting abilities from divine favor. The varieties of such a class are therefore 
+as numerous as the Deities worshipped across the expanse of the world. The customs of the Priest are 
+entirely based upon the bestowing Deity. The spells available, the customs of worship, and the raiment 
+and weapons allowed are all dependent on this relationship.
+     That being said, some generalities can be laid out. Priests are primarily a spell casting class. They are 
+granted freedom to all available spells without having to pre-select a number of casts to allot. These Spell 
+Casts are replenished by ritual worship to their Deity. The exact nature of this ritual varies from Deity 
+to Deity. Deities are associated with specific magical \"spheres\" (plant, elemental, healing, etc). Most 
+Deities have a primary sphere and one or two secondary spheres. Spells from the primary sphere will be 
+accessible to the Priest first.
+     Many Priests begin and end their adult lives in a cloister or monastery. Worship is their primary work 
+in life and many Priests spend entire days of their lives wrapped in the study and reproduction of 
+religious texts. Such devotion ties a Priest to his/her God closely, but most Priests are expected to give 
+service to their community as well. Depending on the Deity in question Priests may be called upon to 
+bless fields, purify wells, or heal the sick. Such services do not come freely however. Priests expect 
+recompense through tithes to the Temple, tithes which fund the often modest lifestyles of the Priests 
+residing therein."
+
+[node name="Priest Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 22.0
+offset_top = 304.0
+offset_right = 460.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Priest:
+
+- Gain 1d6 Hit Points upon Level-up.
+
+- Access to all Spells within the Spheres of the chosen Deity.
+
+- Three 1st level Spell Casts at first level.
+
+- Proficiency in Reading/Writing, Ancient History, and Religion.
+
+- Armor and Weapon restrictions determined by Deity.
+
+- THAC0 improves at a rate of 1 every third Level.
+
+- The ability to use Scrolls and learn from Spell Tomes."
+
+[node name="Cleric Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 476.0
+offset_top = 116.0
+offset_right = 1142.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     The life of a Cleric is that of a traveler. Called upon to spread the word and works of their Deity, the 
+Cleric is oft found living the rough life of the traveler with little more than a roughspun robe and 
+quarterstaff. As befits such a lifestyle, Clerics tend to be practical folk. They attempt to fund this lifestyle 
+through acts of faith but are just as likely to be seen earning a meal chopping wood or carrying water.
+     Clerics, much like Priests, are devoted to a specific Deity and inherit all the same limitations of spell 
+\"sphere\". Clerics are afforded more leniency insofar as the specificity of their rituals, but are more limited 
+in spell selection. Clerics must choose what spells they are gifted as they level whereas Priests are granted 
+full access to all spells of the appropriate sphere and spell level upon level-up. Clerics are also 
+considerably more adept in a fight and are able to wear metal armor without disrupting their ability to 
+cast spells.
+     With such avant-garde living Clerics do not have same level of education and schooling as Priests. 
+Therefore, most lords & city officials prefer to deal with Priests over Clerics. Priests, with their close ties to 
+specific temples, are able to preach with more authority. The average villager, however, considers the 
+Cleric a welcome house guest. A hot meal and snug hayloft are happily traded for news of the Clerics 
+travels and a quaint blessing when the Cleric parts ways."
+
+[node name="Cleric Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 23.0
+offset_top = 303.0
+offset_right = 463.0
+offset_bottom = 630.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Cleric:
+
+- Gain 1d8 Hit Points upon Level-up.
+
+- Access to chosen Spells within the Spheres of the chosen Deity.
+
+- Two 1st level Spell Casts at first level.
+
+- Proficiency in one of Cooking, Brewing, Fire-building or Agriculture.
+
+- Armor and Weapon restrictions determined by Deity.
+
+- THAC0 improves at a rate of 1 every second Level.
+
+- The ability to use Scrolls and learn from Spell Tomes."
+
+[node name="Druid Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 473.0
+offset_top = 107.0
+offset_right = 1140.0
+offset_bottom = 588.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     Druids are among the rarest entities that can be encountered in the world. Though originally a person, 
+the Druid has become something altogether more primordial. Able to meld into the landscape, speak 
+with the foliage, and even shape-shift into animals; the Druid is as foreign to civilization as the most 
+remote of hermits.
+     Druids are a hierarchical society beholden only to themselves. At the pinnacle of this pyramid is the 
+Hierophant, responsible for the equilibrium of the world's many environments. Below him, the sectors of 
+land, sea, and air are placed in the hands of three respective underlings. These are then divided again 
+among the various climates and so-on until each forest, mountain, and desert has a Druid responsible for 
+its well-being. This grand collection is known as the Circle of Druids. In truth, a Druid is not a Druid 
+until he/she has taken stewardship for a plot of land. Responsible management of this ecosystem will 
+result in official recognition by the Circle.
+     Such distinction is not given lightly and Druids spend many years searching for both the appropriate 
+place and accruing the necessary worldly experience to nurture such symbiosis. The difference in power 
+of a Druid at home in the biome they are responsible for and a Druid still wandering are immense, with 
+the former nearly omnipotent and omniscient within its bounds. The latter is similar to a Priest in ability 
+but with a few important distinctions.
+     The Druid does not have a ritual required for the return of spellcasts beyond a simple directive to 
+commune, overnight, with nature. The typical primitive campsite satisfies such a requirement. Druids 
+have access to seven of the sixteen spheres: All, Animal, Elemental, Healing, Plant, and Divination. The 
+Druid may only use \"natural\" armors, those made of bark or skins. A Druid may only use the following 
+weapons: Club, Sickle, Dart, Spear, Dagger, Scimitar, Sling, and Staff. These limitations ensure the Druid
+does not become dependent upon civilization for their needs."
+
+[node name="Druid Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 299.0
+offset_right = 378.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Druid:
+
+- Gain 1d8 Hit Points upon Level-up.
+
+- Access to chosen Spells within the Natural Spheres.
+- Three 1st level Spell Casts at first level.
+- Limited ability to Shapeshift starting at third level.
+- Proficiency in Animal Training, Animal Handling, 
+  Animal Lore, and Weather Sense.
+- Armor and Weapon restrictions detailed in description.
+- THAC0 improves at a rate of 1 every third Level.
+- The ability to use Scrolls and learn from Spell Tomes."
+
+[node name="Mage Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 472.0
+offset_top = 101.0
+offset_right = 1145.0
+offset_bottom = 560.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "   Mages are born of an unusual knack, typically found in late adolescense. This original cantrip is the 
+Mage's signature. Though at their root the Cantrip is a simple trick, it was a Mage's most instinctual 
+way of first discovering their Arcane connection. Therefore, the Cantrip is like a third limb and it can be 
+excercised as such. Many a Mage made life's first few big dollars off the back of that trick. From that 
+point on the potential of Magic is an undeniable pull and the quest for understanding began.
+    While much can be done in many facets of life with will and instinct, Magic is a scholarly art. The 
+runic language used to inscribe spells facilitates the evocation of the world's latent energies. Such energies 
+are inherent in the fabric of reality; and extend beyond the Material Plane that all the surroundings of the 
+physical world exist upon. Each rune has been painstakingly perfected through trial and error extending 
+back eons, and possibly moreso. The collection of this runic alphabet, and the many languages it has been 
+compiled into, have produced an uncountable amount of spells. They are collected on vellum skins and 
+inscribed with enchanted ink. Their very existence the undeniable evidence of times that have come before. 
+There are known troves of them in the world and legends surround the ruins that harbor them. Legends of 
+apocalyptic devastation but also irrational Arcane Wonders. 
+    Magic is also an exact art, It is in the intonation, in the hand movements, a light pinky, a heavy 
+shoulder braced against the impact just so. There is a cadence to each and every individual spell. The 
+accoustics of your voice interacting with the runes on the page to create a buzz of reality. The channeling 
+of that reality performed with the movements of your hands and out through some impetus (fingertip, 
+wand, staff). The will of that reality realized then materializes and functions as instructed. 
+     The Mage is enthralled. The mastery of such power would be overwhelming in its abundance. 
+You could win a war. You could change history. It's all there. You just have to survive the attempt.  "
+
+[node name="Mage Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 291.0
+offset_right = 450.0
+offset_bottom = 662.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Mage:
+
+- Gain 1d4 Hit Points upon Level-up.
+
+- Access to three chosen Spells from ANY School of Magic.
+Influenced by Intelligence.
+
+- Two 1st level Spell Casts at first level, Influenced by Wisdom.
+
+- Proficiency in Reading/Writing.
+
+- THAC0 improves at a rate of 1 every fourth Level.
+
+- The ability to use Scrolls and learn from Spell Tomes.
+
+- No ability to wear armor. Access only to Simple Weapons."
+
+[node name="Wizard Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 479.0
+offset_top = 82.0
+offset_right = 1147.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "     The Wizard was born into the Arcane. Raised and annointed with Magic, either through society or 
+gifted parents, the Wizard began study at an early age and with great assistance. The Wizard or Witch's 
+knowledge goes deeper. They don't have a masterful cantrip. They have a school of Magic within which 
+they have been raised. Perhaps it was their mother's specialty or maybe it was their favorite subject in 
+school. In any case, they've been steeped in it for years before truly laying their hands on it, but once 
+unleashed, they're unmatched.
+     The Wizard comes equipped with a Grimoire. The Grimoire is a personalized hand-crafted spellbook 
+assosciated with any one School of Magic: Illusion, Enchantment/Charm, Conjuration, Abjuration, 
+Necromancy, Invocation/Evocation, Divination, or Alteration. The Grimoire shares an affinity for 
+this School and all spells of its type are enhanced in some way. This affinity, and related schooling, means
+that every available Spell of the specialized School must be taken before other Spells at that Spell Level
+are allowed; and the School opposite of the chosen School may never be taken.
+     The Wizard/Witch knew they were destined for a life of peril and took lessons in swordplay, swords 
+being an optimal implement amongst weapons for channelling Magic. This makes Wizards a compelling 
+fighter in addition to wielding the Arcane Art and attacks can be attempted in addition to the casting of 
+a Spell within the same round. The sudden footwork of being engaged in melee is not conducive to the
+ridgidity typically required to weave a Spell, but the long hours of childhood study provide the familiarity
+required. It is marginally less subtle than the flick of a wrist, however. Integral to the impressive ability
+to strike with a weapon and simultaneously cast a Spell is the Grimoire. The Witch or Wizard has 
+wielded the Arcane through this tome their entire lives and should a Grimoire be lost, so to is this 
+formidable talent."
+
+[node name="Wizard Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 301.0
+offset_right = 512.0
+offset_bottom = 672.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_su20x")
+text = "Statistical and Ability Details for the Wizard:
+
+- Gain 1d6 Hit Points upon Level-up.
+
+- Specialization in a single School of Magic.
+- Access to three chosen Spells from this Specialized School.
+  Influenced by Intelligence.
+- Two 1st level Spell Casts at first level.
+  Influenced by Wisdom.
+- Proficiency in Reading/Writing.
+- THAC0 improves at a rate of 1 every third Level.
+- The ability to use Scrolls and learn from Spell Tomes.
+- No ability to wear armor. 
+- Access to one-handed Swords and Simple Weapons."
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -64.0
+offset_right = 63.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.55867
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kf8no")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ordvm")
+icon = ExtResource("5_flwf0")
+script = SubResource("GDScript_x630o")
+
+[connection signal="item_clicked" from="Class Options" to="." method="_on_item_list_item_clicked"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

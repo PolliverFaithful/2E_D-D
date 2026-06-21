@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://dojpt2j8n17fb"]
+
+[ext_resource type="Script" uid="uid://bs2vu3qp186k" path="res://Scripts/Completed Sheets/Introduction to the Game.gd" id="1_fha5p"]
+[ext_resource type="Texture2D" uid="uid://dlj8r2vigna78" path="res://Images/Backgrounds/parchmentBasic.png" id="2_fha5p"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="3_tj8oe"]
+[ext_resource type="FontFile" uid="uid://csbvktjhamhsr" path="res://Fonts/LinLibertine_RI.otf" id="4_jommi"]
+[ext_resource type="Texture2D" uid="uid://b6jrk5oi4yrw5" path="res://Images/Buttons/arrowHead.png" id="5_82svr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb6x8"]
+texture = ExtResource("2_fha5p")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_or4xe"]
+
+[sub_resource type="GDScript" id="GDScript_jdrmc"]
+script/source = "extends Button
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fha5p")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_eb6x8")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.0
+offset_right = 155.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tj8oe")
+theme_override_font_sizes/font_size = 40
+text = "Introduction to the Game"
+
+[node name="Exposition" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 66.0
+offset_right = 956.0
+offset_bottom = 526.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_jommi")
+text = "So what exactly is this? What kind of game are you about to play? Well, that requires some explanation as this is a lifelong labor of love attempting to be recreated
+within another medium. A standalone medium. The labor of love in question is a homebrewed module of AD&D 2nd Edition, Module may be putting it lightly but it is
+not quite up to a campaign setting. In person, I have played through this module a total of 4 times. It takes about 2 years of weeklyish play to complete and has completed in
+a different way each and every time. The plot has thickened and the characters fleshed out with each run and though some details have changed with age it has proven to be
+an incredible adventure and thrilled 20 of the closest people in my life including my wife, twice.
+     The title of the module is \"THE ISLES OF DREAD\". Yes, I'm aware that is an actually published module. I have never played the official module, I saw it in a used book store
+once as a kid and the name stuck with me. My Isles of Dread bears very little resemblance to the official, aside from it occuring on a far-flung archipeligo. The plot involves 
+Pirates, Cultists, ancient forgotten Gods and their tokens, Slavers, The Undead. It's a bit of a horrorcore and it plays that way. Situations are tense and death, which will come, 
+can be sudden. My homebrew, while not a true 2nd Edition, clings to the lethality of early D&D. It drives the plot. It inflicts desperation. Danger engenders the realism of the
+game through consequence and therefore allows the story to come to life. Dungeons and Dragons, at it's core, is just a really really good story. A storybook you cannot put down,
+but this kind of story takes participation.
+     Pen and Paper RPG's are a unique and ephemeral thing. That's because it is a thing to be performed and no two performances will be the same. This game will do its
+absolute best to capture that, impossible as it may be. There will be numerous background checks for plot points, inventory, statistics, reputation and with whom. Time will be
+a dynamic reality to the world with a day counter in which NPC's move about. Their movements and locations will be indicative of plot points and the PC's actions that disrupt or
+alter that programmed time table will be integral to the resolution of the story. Yes, that means the bad guys are conversing. They are sharing information. Information about you,
+the other factions, the rumors spreading through the islands. NPC's can be swayed to allies or enemies and that status can swing entire story-arcs.
+     There will, of course, be limitations. Seated at a table the performance is fluid and the DM can weigh consequences in real time and act accordingly. I will have to pre-type any
+and every encounter that can be encountered. Still, know that these concepts hang in the balance as you play. A lot of this work has already been done. I have a 3 ring binder full
+of hand-written, produced pages. Each page compiled of the various notes and session preps from the 4 campaigns. In a lot of ways, a computer will quicken calculations and it
+opens an entirely new lane of detail as I won't have 7 legal pads of running stats unique to each PC to keep up to date/reference.
+     Regardless, the presentation of this module will be bare-bones. I am a fair writer, and story-telling is a kind of art. However, I have no real skill in drawing aside from the 
+decent pencil sketch. I'll try to make things satisfying but this will most likely feel like an interactive \"Choose-Your-Own\" Adventure book."
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.99988
+offset_top = -64.9999
+offset_right = 60.0001
+offset_bottom = -0.999939
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57358
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tj8oe")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_or4xe")
+icon = ExtResource("5_82svr")
+script = SubResource("GDScript_jdrmc")
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

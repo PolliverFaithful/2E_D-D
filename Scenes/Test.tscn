@@ -1,0 +1,638 @@
+[gd_scene load_steps=17 format=4 uid="uid://biw4xt8o8nkkq"]
+
+[ext_resource type="Script" uid="uid://cyoru2l6gv6g6" path="res://Scripts/Incomplete Sheets/Test.gd" id="1_e20pd"]
+[ext_resource type="Texture2D" uid="uid://cmg27yuugfclh" path="res://Images/Tiles/Orc Ground.png" id="2_4qbbu"]
+[ext_resource type="Texture2D" uid="uid://bix5dhyell61o" path="res://Images/Tiles/Sand.png" id="2_f2nln"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="5_06fis"]
+[ext_resource type="PackedScene" uid="uid://tfptk6sms8x4" path="res://Scenes/Unit.tscn" id="5_efk68"]
+[ext_resource type="Texture2D" uid="uid://dlj8r2vigna78" path="res://Images/Backgrounds/parchmentBasic.png" id="5_mma61"]
+[ext_resource type="Script" uid="uid://b13l0bto47g52" path="res://Scenes/Battle_UI.gd" id="5_rarx8"]
+[ext_resource type="Texture2D" uid="uid://fgyer6jvae77" path="res://Images/Kenny Cartography/elementSquare.png" id="8_wjxug"]
+[ext_resource type="Texture2D" uid="uid://gl5xe10rvy2k" path="res://Images/Backgrounds/parchmentAncient.png" id="9_8d4ee"]
+[ext_resource type="FontFile" uid="uid://csbvktjhamhsr" path="res://Fonts/LinLibertine_RI.otf" id="10_3la1u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efk68"]
+resource_name = "Sand"
+texture = ExtResource("2_f2nln")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_06fis"]
+tile_shape = 3
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_efk68")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3xrw"]
+texture = ExtResource("2_4qbbu")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o52cs"]
+tile_shape = 3
+sources/0 = SubResource("TileSetAtlasSource_q3xrw")
+
+[sub_resource type="Theme" id="Theme_ki7sg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5xim"]
+texture = ExtResource("8_wjxug")
+
+[node name="Main" type="Node2D" groups=["Units"]]
+script = ExtResource("1_e20pd")
+
+[node name="Background" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAAAAAAAAAADAAQAAAAAAAEAAAAEAAQAAAABAAEAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAACAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAAAAAEAAAAFAAQAAAAAAAEAAAAEAAUAAAABAAEAAAAEAAYAAAAAAAAAAAADAAUAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAABAAAAAAAFAAYAAAABAAEAAAAEAAgAAAABAAAAAAAEAAkAAAAAAAEAAAAEAAoAAAABAAEAAAAEAAsAAAAAAAAAAAAEAAwAAAABAAEAAAAEAA0AAAAAAAAAAAAEAA4AAAAAAAEAAAAEAA8AAAABAAAAAAAEABAAAAAAAAEAAAAEABEAAAABAAEAAAAEABIAAAAAAAAAAAAEABMAAAABAAEAAAAEABQAAAABAAAAAAAEABUAAAABAAAAAAAEABYAAAAAAAAAAAAEABcAAAAAAAAAAAAEABgAAAAAAAAAAAAEABkAAAABAAAAAAAEABoAAAAAAAAAAAAFAAgAAAABAAEAAAAFAAkAAAABAAAAAAAFAAoAAAABAAAAAAAFAAsAAAABAAEAAAAFAAwAAAABAAAAAAAFAA0AAAABAAEAAAAFAA4AAAAAAAEAAAAFAA8AAAAAAAEAAAAFABAAAAAAAAAAAAAFABEAAAAAAAEAAAAFABIAAAABAAAAAAAFABMAAAAAAAEAAAAFABQAAAAAAAAAAAAFABUAAAABAAAAAAAFABYAAAAAAAEAAAAFABcAAAAAAAAAAAAFABgAAAABAAEAAAAFABkAAAAAAAAAAAAFABoAAAABAAAAAAAGAAgAAAABAAAAAAAGAAkAAAABAAAAAAAGAAoAAAAAAAEAAAAGAAsAAAAAAAEAAAAGAAwAAAAAAAAAAAAGAA0AAAAAAAAAAAAGAA4AAAABAAAAAAAGAA8AAAABAAAAAAAGABAAAAABAAAAAAAGABEAAAAAAAEAAAAGABIAAAAAAAAAAAAGABMAAAAAAAEAAAAGABQAAAAAAAEAAAAGABUAAAAAAAAAAAAGABYAAAAAAAAAAAAGABcAAAAAAAAAAAAGABgAAAABAAAAAAAGABkAAAAAAAAAAAAGABoAAAAAAAEAAAAHAAgAAAAAAAAAAAAHAAkAAAABAAEAAAAHAAoAAAAAAAEAAAAHAAsAAAAAAAEAAAAHAAwAAAAAAAAAAAAHAA0AAAABAAEAAAAHAA4AAAAAAAAAAAAHAA8AAAAAAAEAAAAHABAAAAAAAAEAAAAHABEAAAAAAAAAAAAHABIAAAABAAEAAAAHABMAAAABAAEAAAAHABQAAAABAAEAAAAHABUAAAAAAAEAAAAHABYAAAAAAAEAAAAHABcAAAAAAAAAAAAHABgAAAAAAAAAAAAHABkAAAAAAAAAAAAHABoAAAABAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAEAAAAIAAoAAAABAAAAAAAIAAsAAAABAAEAAAAIAAwAAAABAAEAAAAIAA0AAAABAAAAAAAIAA4AAAABAAAAAAAIAA8AAAAAAAEAAAAIABAAAAAAAAAAAAAIABEAAAABAAAAAAAIABIAAAAAAAEAAAAIABMAAAABAAEAAAAIABQAAAABAAAAAAAIABUAAAAAAAAAAAAIABYAAAABAAEAAAAIABcAAAAAAAAAAAAIABgAAAABAAEAAAAIABkAAAABAAEAAAAIABoAAAABAAEAAAAJAAgAAAAAAAEAAAAJAAkAAAAAAAAAAAAJAAoAAAABAAAAAAAJAAsAAAABAAAAAAAJAAwAAAABAAAAAAAJAA0AAAAAAAEAAAAJAA4AAAABAAEAAAAJAA8AAAAAAAAAAAAJABAAAAAAAAAAAAAJABEAAAABAAEAAAAJABIAAAABAAEAAAAJABMAAAAAAAEAAAAJABQAAAABAAEAAAAJABUAAAAAAAEAAAAJABYAAAABAAAAAAAJABcAAAAAAAEAAAAJABgAAAAAAAEAAAAJABkAAAAAAAAAAAAJABoAAAABAAEAAAAKAAgAAAAAAAAAAAAKAAkAAAABAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAEAAAAKAAwAAAABAAAAAAAKAA0AAAAAAAAAAAAKAA4AAAABAAAAAAAKAA8AAAABAAEAAAAKABAAAAAAAAEAAAAKABEAAAAAAAAAAAAKABIAAAABAAEAAAAKABMAAAABAAEAAAAKABQAAAABAAAAAAAKABUAAAAAAAEAAAAKABYAAAABAAEAAAAKABcAAAAAAAEAAAAKABgAAAABAAEAAAAKABkAAAAAAAEAAAAKABoAAAAAAAEAAAALAAgAAAABAAAAAAALAAkAAAAAAAEAAAALAAoAAAABAAEAAAALAAsAAAAAAAAAAAALAAwAAAAAAAEAAAALAA0AAAABAAAAAAALAA4AAAABAAEAAAALAA8AAAABAAAAAAALABAAAAAAAAEAAAALABEAAAABAAEAAAALABIAAAAAAAEAAAALABMAAAAAAAAAAAALABQAAAABAAEAAAALABUAAAAAAAAAAAALABYAAAAAAAEAAAALABcAAAABAAAAAAALABgAAAAAAAEAAAALABkAAAAAAAAAAAALABoAAAAAAAEAAAAMAAgAAAABAAAAAAAMAAkAAAAAAAEAAAAMAAoAAAABAAAAAAAMAAsAAAABAAEAAAAMAAwAAAABAAAAAAAMAA0AAAAAAAEAAAAMAA4AAAABAAAAAAAMAA8AAAAAAAEAAAAMABAAAAABAAAAAAAMABEAAAABAAEAAAAMABIAAAAAAAAAAAAMABMAAAABAAEAAAAMABQAAAAAAAEAAAAMABUAAAAAAAAAAAAMABYAAAAAAAAAAAAMABcAAAABAAEAAAAMABgAAAABAAEAAAAMABkAAAAAAAAAAAAMABoAAAABAAEAAAANAAgAAAAAAAAAAAANAAkAAAABAAAAAAANAAoAAAABAAAAAAANAAsAAAABAAEAAAANAAwAAAABAAAAAAANAA0AAAABAAEAAAANAA4AAAAAAAAAAAANAA8AAAABAAEAAAANABAAAAAAAAAAAAANABEAAAAAAAEAAAANABIAAAAAAAAAAAANABMAAAAAAAEAAAANABQAAAAAAAEAAAANABUAAAAAAAAAAAANABYAAAAAAAAAAAANABcAAAABAAEAAAANABgAAAAAAAAAAAANABkAAAABAAAAAAANABoAAAABAAEAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAOAAsAAAABAAEAAAAOAAwAAAAAAAAAAAAOAA0AAAAAAAAAAAAOAA4AAAAAAAEAAAAOAA8AAAAAAAEAAAAOABAAAAAAAAEAAAAOABEAAAAAAAAAAAAOABIAAAAAAAEAAAAOABMAAAABAAAAAAAOABQAAAAAAAEAAAAOABUAAAAAAAAAAAAOABYAAAAAAAAAAAAOABcAAAAAAAAAAAAOABgAAAABAAEAAAAOABkAAAAAAAEAAAAOABoAAAAAAAEAAAAPAAgAAAABAAEAAAAPAAkAAAAAAAEAAAAPAAoAAAABAAEAAAAPAAsAAAABAAEAAAAPAAwAAAABAAAAAAAPAA0AAAABAAEAAAAPAA4AAAAAAAEAAAAPAA8AAAAAAAEAAAAPABAAAAABAAAAAAAPABEAAAAAAAEAAAAPABIAAAAAAAAAAAAPABMAAAABAAAAAAAPABQAAAABAAEAAAAPABUAAAAAAAEAAAAPABYAAAAAAAEAAAAPABcAAAAAAAAAAAAPABgAAAABAAAAAAAPABkAAAABAAEAAAAPABoAAAAAAAAAAAAQAAgAAAABAAAAAAAQAAkAAAABAAAAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAAQAAwAAAAAAAEAAAAQAA0AAAABAAEAAAAQAA4AAAAAAAAAAAAQAA8AAAABAAAAAAAQABAAAAAAAAEAAAAQABEAAAABAAEAAAAQABIAAAABAAAAAAAQABMAAAABAAEAAAAQABQAAAAAAAAAAAAQABUAAAAAAAEAAAAQABYAAAAAAAEAAAAQABcAAAABAAAAAAAQABgAAAABAAAAAAAQABkAAAAAAAEAAAAQABoAAAAAAAEAAAARAAgAAAAAAAEAAAARAAkAAAAAAAAAAAARAAoAAAABAAAAAAARAAsAAAABAAEAAAARAAwAAAAAAAEAAAARAA0AAAABAAEAAAARAA4AAAABAAAAAAARAA8AAAABAAAAAAARABAAAAAAAAEAAAARABEAAAAAAAAAAAARABIAAAAAAAAAAAARABMAAAABAAEAAAARABQAAAABAAEAAAARABUAAAABAAEAAAARABYAAAABAAEAAAARABcAAAAAAAAAAAARABgAAAABAAEAAAARABkAAAAAAAAAAAARABoAAAAAAAEAAAASAAgAAAABAAEAAAASAAkAAAAAAAEAAAASAAoAAAAAAAEAAAASAAsAAAABAAEAAAASAAwAAAABAAEAAAASAA0AAAABAAAAAAASAA4AAAAAAAAAAAASAA8AAAABAAAAAAASABAAAAAAAAAAAAASABEAAAABAAAAAAASABIAAAABAAEAAAASABMAAAABAAEAAAASABQAAAABAAAAAAASABUAAAABAAEAAAASABYAAAAAAAAAAAASABcAAAABAAAAAAASABgAAAAAAAAAAAASABkAAAAAAAAAAAASABoAAAAAAAAAAAATAAgAAAABAAEAAAATAAkAAAAAAAEAAAATAAoAAAABAAEAAAATAAsAAAABAAEAAAATAAwAAAAAAAAAAAATAA0AAAAAAAEAAAATAA4AAAABAAAAAAATAA8AAAABAAAAAAATABAAAAABAAEAAAATABEAAAAAAAAAAAATABIAAAAAAAAAAAATABMAAAABAAEAAAATABQAAAABAAEAAAATABUAAAABAAEAAAATABYAAAABAAEAAAATABcAAAAAAAEAAAATABgAAAAAAAAAAAATABkAAAABAAAAAAATABoAAAAAAAAAAAAUAAgAAAAAAAEAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAEAAAAUAAsAAAAAAAEAAAAUAAwAAAAAAAEAAAAUAA0AAAABAAAAAAAUAA4AAAAAAAAAAAAUAA8AAAABAAEAAAAUABAAAAABAAEAAAAUABEAAAABAAEAAAAUABIAAAABAAEAAAAUABMAAAAAAAAAAAAUABQAAAABAAEAAAAUABUAAAABAAEAAAAUABYAAAAAAAAAAAAUABcAAAABAAEAAAAUABgAAAABAAEAAAAUABkAAAAAAAEAAAAUABoAAAABAAAAAAAVAAgAAAAAAAEAAAAVAAkAAAABAAEAAAAVAAoAAAABAAEAAAAVAAsAAAABAAEAAAAVAAwAAAAAAAAAAAAVAA0AAAABAAAAAAAVAA4AAAABAAEAAAAVAA8AAAABAAEAAAAVABAAAAABAAEAAAAVABEAAAAAAAEAAAAVABIAAAABAAAAAAAVABMAAAAAAAAAAAAVABQAAAAAAAEAAAAVABUAAAAAAAEAAAAVABYAAAABAAAAAAAVABcAAAABAAEAAAAVABgAAAAAAAAAAAAVABkAAAABAAEAAAAVABoAAAAAAAAAAAAWAAgAAAABAAEAAAAWAAkAAAAAAAAAAAAWAAoAAAABAAAAAAAWAAsAAAAAAAEAAAAWAAwAAAABAAEAAAAWAA0AAAABAAAAAAAWAA4AAAAAAAAAAAAWAA8AAAAAAAEAAAAWABAAAAAAAAAAAAAWABEAAAAAAAAAAAAWABIAAAAAAAEAAAAWABMAAAABAAAAAAAWABQAAAABAAAAAAAWABUAAAABAAEAAAAWABYAAAABAAAAAAAWABcAAAAAAAEAAAAWABgAAAAAAAAAAAAWABkAAAAAAAEAAAAWABoAAAAAAAAAAAAXAAgAAAAAAAEAAAAXAAkAAAAAAAAAAAAXAAoAAAAAAAAAAAAXAAsAAAABAAAAAAAXAAwAAAAAAAEAAAAXAA0AAAABAAEAAAAXAA4AAAABAAEAAAAXAA8AAAABAAAAAAAXABAAAAABAAAAAAAXABEAAAAAAAAAAAAXABIAAAABAAAAAAAXABMAAAABAAAAAAAXABQAAAABAAAAAAAXABUAAAABAAAAAAAXABYAAAABAAEAAAAXABcAAAAAAAAAAAAXABgAAAAAAAAAAAAXABkAAAAAAAAAAAAXABoAAAABAAEAAAAYAAgAAAABAAAAAAAYAAkAAAAAAAAAAAAYAAoAAAABAAEAAAAYAAsAAAAAAAEAAAAYAAwAAAABAAAAAAAYAA0AAAAAAAEAAAAYAA4AAAAAAAAAAAAYAA8AAAAAAAEAAAAYABAAAAABAAEAAAAYABEAAAABAAAAAAAYABIAAAAAAAEAAAAYABMAAAAAAAEAAAAYABQAAAAAAAAAAAAYABUAAAAAAAEAAAAYABYAAAAAAAEAAAAYABcAAAAAAAAAAAAYABgAAAAAAAAAAAAYABkAAAABAAEAAAAYABoAAAABAAAAAAAZAAgAAAAAAAEAAAAZAAkAAAAAAAAAAAAZAAoAAAABAAAAAAAZAAsAAAAAAAEAAAAZAAwAAAAAAAEAAAAZAA0AAAAAAAAAAAAZAA4AAAAAAAAAAAAZAA8AAAAAAAAAAAAZABAAAAABAAEAAAAZABEAAAAAAAEAAAAZABIAAAAAAAEAAAAZABMAAAABAAEAAAAZABQAAAAAAAEAAAAZABUAAAABAAAAAAAZABYAAAAAAAEAAAAZABcAAAABAAEAAAAZABgAAAAAAAEAAAAZABkAAAABAAAAAAAZABoAAAABAAAAAAAaAAgAAAABAAEAAAAaAAkAAAABAAEAAAAaAAoAAAAAAAAAAAAaAAsAAAABAAEAAAAaAAwAAAABAAEAAAAaAA0AAAAAAAEAAAAaAA4AAAAAAAAAAAAaAA8AAAAAAAEAAAAaABAAAAABAAAAAAAaABEAAAABAAEAAAAaABIAAAABAAAAAAAaABMAAAABAAAAAAAaABQAAAABAAAAAAAaABUAAAAAAAEAAAAaABYAAAABAAEAAAAaABcAAAABAAEAAAAaABgAAAABAAAAAAAaABkAAAAAAAAAAAAaABoAAAABAAAAAAAbAAgAAAABAAEAAAAbAAkAAAAAAAAAAAAbAAoAAAAAAAAAAAAbAAsAAAAAAAAAAAAbAAwAAAAAAAEAAAAbAA0AAAAAAAEAAAAbAA4AAAABAAAAAAAbAA8AAAABAAEAAAAbABAAAAAAAAAAAAAbABEAAAABAAEAAAAbABIAAAAAAAAAAAAbABMAAAAAAAEAAAAbABQAAAAAAAEAAAAbABUAAAABAAEAAAAbABYAAAABAAEAAAAbABcAAAAAAAAAAAAbABgAAAAAAAEAAAAbABkAAAAAAAAAAAAbABoAAAABAAEAAAAcAAgAAAAAAAAAAAAcAAkAAAABAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAABAAEAAAAcAA0AAAABAAEAAAAcAA4AAAABAAAAAAAcAA8AAAABAAEAAAAcABAAAAABAAAAAAAcABEAAAAAAAEAAAAcABIAAAABAAEAAAAcABMAAAAAAAEAAAAcABQAAAAAAAAAAAAcABUAAAABAAEAAAAcABYAAAAAAAEAAAAcABcAAAAAAAEAAAAcABgAAAABAAEAAAAcABkAAAAAAAAAAAAcABoAAAAAAAAAAAAdAAgAAAABAAEAAAAdAAkAAAAAAAAAAAAdAAoAAAAAAAAAAAAdAAsAAAABAAEAAAAdAAwAAAABAAAAAAAdAA0AAAAAAAEAAAAdAA4AAAABAAAAAAAdAA8AAAAAAAEAAAAdABAAAAAAAAAAAAAdABEAAAABAAAAAAAdABIAAAABAAAAAAAdABMAAAAAAAAAAAAdABQAAAABAAAAAAAdABUAAAAAAAEAAAAdABYAAAAAAAEAAAAdABcAAAAAAAEAAAAdABgAAAAAAAAAAAAdABkAAAAAAAEAAAAdABoAAAABAAAAAAAeAAgAAAABAAEAAAAeAAkAAAAAAAAAAAAeAAoAAAAAAAEAAAAeAAsAAAABAAAAAAAeAAwAAAABAAAAAAAeAA0AAAABAAAAAAAeAA4AAAAAAAAAAAAeAA8AAAABAAEAAAAeABAAAAABAAEAAAAeABEAAAABAAEAAAAeABIAAAABAAAAAAAeABMAAAABAAEAAAAeABQAAAABAAEAAAAeABUAAAAAAAEAAAAeABYAAAABAAEAAAAeABcAAAAAAAAAAAAeABgAAAABAAAAAAAeABkAAAAAAAEAAAAeABoAAAABAAAAAAAfAAgAAAABAAEAAAAfAAkAAAAAAAAAAAAfAAoAAAABAAAAAAAfAAsAAAAAAAAAAAAfAAwAAAABAAAAAAAfAA0AAAABAAAAAAAfAA4AAAAAAAEAAAAfAA8AAAABAAEAAAAfABAAAAAAAAAAAAAfABEAAAAAAAAAAAAfABIAAAABAAAAAAAfABMAAAABAAEAAAAfABQAAAAAAAAAAAAfABUAAAAAAAAAAAAfABYAAAABAAEAAAAfABcAAAAAAAEAAAAfABgAAAABAAAAAAAfABkAAAABAAEAAAAfABoAAAAAAAEAAAAgAAgAAAABAAAAAAAgAAkAAAAAAAEAAAAgAAoAAAABAAEAAAAgAAsAAAAAAAEAAAAgAAwAAAAAAAAAAAAgAA0AAAABAAEAAAAgAA4AAAAAAAEAAAAgAA8AAAAAAAAAAAAgABAAAAAAAAAAAAAgABEAAAABAAAAAAAgABIAAAAAAAAAAAAgABMAAAAAAAEAAAAgABQAAAABAAAAAAAgABUAAAABAAEAAAAgABYAAAABAAAAAAAgABcAAAABAAAAAAAgABgAAAABAAAAAAAgABkAAAABAAAAAAAgABoAAAABAAEAAAAhAAgAAAABAAEAAAAhAAkAAAAAAAAAAAAhAAoAAAABAAAAAAAhAAsAAAABAAAAAAAhAAwAAAABAAAAAAAhAA0AAAABAAAAAAAhAA4AAAABAAAAAAAhAA8AAAAAAAEAAAAhABAAAAABAAAAAAAhABEAAAAAAAEAAAAhABIAAAAAAAEAAAAhABMAAAAAAAEAAAAhABQAAAABAAAAAAAhABUAAAABAAAAAAAhABYAAAAAAAEAAAAhABcAAAAAAAAAAAAhABgAAAAAAAEAAAAhABkAAAABAAEAAAAhABoAAAABAAEAAAAiAAgAAAAAAAEAAAAiAAkAAAAAAAAAAAAiAAoAAAABAAEAAAAiAAsAAAABAAEAAAAiAAwAAAABAAEAAAAiAA0AAAAAAAEAAAAiAA4AAAABAAEAAAAiAA8AAAABAAAAAAAiABAAAAABAAEAAAAiABEAAAABAAEAAAAiABIAAAAAAAAAAAAiABMAAAAAAAEAAAAiABQAAAABAAEAAAAiABUAAAABAAEAAAAiABYAAAABAAAAAAAiABcAAAAAAAAAAAAiABgAAAABAAEAAAAiABkAAAAAAAEAAAAiABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAABAAMAAAABAAAAAAACAAQAAAABAAEAAAACAAUAAAAAAAEAAAADAAYAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAEAAAAAAA8AAAABAAEAAAAAABAAAAAAAAEAAAAAABEAAAABAAAAAAAAABIAAAAAAAEAAAAAABMAAAABAAAAAAAAABQAAAAAAAEAAAAAABUAAAABAAEAAAAAABYAAAAAAAEAAAAAABcAAAAAAAEAAAAAABgAAAAAAAEAAAAAABkAAAABAAAAAAAAABoAAAAAAAEAAAABAAAAAAABAAEAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAEAAAABAAkAAAAAAAEAAAABAAoAAAAAAAAAAAABAAsAAAABAAAAAAABAAwAAAABAAAAAAABAA0AAAAAAAEAAAABAA4AAAAAAAEAAAABAA8AAAABAAAAAAABABAAAAAAAAEAAAABABEAAAABAAAAAAABABIAAAABAAAAAAABABMAAAABAAAAAAABABQAAAAAAAEAAAABABUAAAAAAAAAAAABABYAAAABAAAAAAABABcAAAAAAAEAAAABABgAAAABAAEAAAABABkAAAABAAAAAAABABoAAAABAAEAAAACAAAAAAAAAAEAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAABAAEAAAACAAkAAAAAAAEAAAACAAoAAAAAAAEAAAACAAsAAAABAAEAAAACAAwAAAAAAAEAAAACAA0AAAABAAAAAAACAA4AAAABAAAAAAACAA8AAAABAAAAAAACABAAAAAAAAAAAAACABEAAAAAAAEAAAACABIAAAAAAAEAAAACABMAAAABAAAAAAACABQAAAAAAAEAAAACABUAAAAAAAAAAAACABYAAAAAAAEAAAACABcAAAABAAEAAAACABgAAAABAAEAAAACABkAAAABAAAAAAACABoAAAAAAAAAAAADAAAAAAABAAAAAAADAAEAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAABAAAAAAADAAoAAAAAAAEAAAADAAsAAAABAAEAAAADAAwAAAABAAEAAAADAA0AAAAAAAAAAAADAA4AAAAAAAEAAAADAA8AAAAAAAAAAAADABAAAAAAAAEAAAADABEAAAABAAEAAAADABIAAAAAAAEAAAADABMAAAABAAEAAAADABQAAAABAAAAAAADABUAAAABAAEAAAADABYAAAABAAAAAAADABcAAAABAAAAAAADABgAAAAAAAAAAAADABkAAAABAAEAAAADABoAAAABAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAEAAAAFAAAAAAAAAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAAAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAAAAAEAAAAGAAQAAAABAAEAAAAGAAUAAAAAAAAAAAAGAAYAAAABAAAAAAAGAAcAAAABAAAAAAAHAAAAAAAAAAEAAAAHAAEAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAAAAAAHAAUAAAABAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAABAAEAAAAIAAAAAAABAAEAAAAIAAEAAAABAAAAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAAAAAAAAAAIAAUAAAABAAEAAAAIAAYAAAABAAAAAAAIAAcAAAABAAEAAAAJAAAAAAAAAAAAAAAJAAEAAAABAAEAAAAJAAIAAAAAAAAAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAAAAAAJAAYAAAAAAAEAAAAJAAcAAAABAAAAAAAKAAAAAAABAAEAAAAKAAEAAAABAAAAAAAKAAIAAAAAAAEAAAAKAAMAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAABAAEAAAALAAAAAAABAAAAAAALAAEAAAABAAAAAAALAAIAAAAAAAAAAAALAAMAAAABAAAAAAALAAQAAAAAAAEAAAALAAUAAAAAAAEAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAABAAAAAAAMAAQAAAAAAAEAAAAMAAUAAAABAAAAAAAMAAYAAAABAAEAAAAMAAcAAAAAAAEAAAANAAAAAAAAAAAAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAAAAAEAAAANAAQAAAABAAAAAAANAAUAAAABAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAABAAAAAAAOAAcAAAAAAAAAAAAPAAAAAAABAAEAAAAPAAEAAAAAAAEAAAAPAAIAAAAAAAEAAAAPAAMAAAABAAEAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAEAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAAAAAAAAAEAAAAQAAEAAAABAAEAAAAQAAIAAAAAAAAAAAAQAAMAAAABAAAAAAAQAAQAAAABAAEAAAAQAAUAAAABAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAABAAEAAAARAAAAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAABAAEAAAARAAQAAAABAAEAAAARAAUAAAABAAEAAAARAAYAAAABAAAAAAARAAcAAAABAAAAAAASAAAAAAABAAEAAAASAAEAAAABAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAABAAEAAAASAAUAAAAAAAAAAAASAAYAAAABAAEAAAASAAcAAAAAAAAAAAATAAAAAAAAAAEAAAATAAEAAAABAAEAAAATAAIAAAAAAAAAAAATAAMAAAAAAAEAAAATAAQAAAABAAEAAAATAAUAAAAAAAEAAAATAAYAAAABAAAAAAATAAcAAAABAAAAAAAUAAAAAAABAAEAAAAUAAEAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAMAAAABAAAAAAAUAAQAAAABAAEAAAAUAAUAAAABAAAAAAAUAAYAAAAAAAEAAAAUAAcAAAAAAAEAAAAVAAAAAAABAAEAAAAVAAEAAAABAAAAAAAVAAIAAAAAAAAAAAAVAAMAAAABAAAAAAAVAAQAAAABAAAAAAAVAAUAAAABAAEAAAAVAAYAAAAAAAAAAAAVAAcAAAAAAAEAAAAWAAAAAAAAAAAAAAAWAAEAAAABAAAAAAAWAAIAAAAAAAEAAAAWAAMAAAABAAAAAAAWAAQAAAAAAAEAAAAWAAUAAAABAAAAAAAWAAYAAAAAAAAAAAAWAAcAAAAAAAEAAAAXAAAAAAAAAAAAAAAXAAEAAAAAAAAAAAAXAAIAAAAAAAAAAAAXAAMAAAAAAAEAAAAXAAQAAAAAAAEAAAAXAAUAAAABAAAAAAAXAAYAAAABAAAAAAAXAAcAAAAAAAEAAAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAEAAAAYAAMAAAAAAAEAAAAYAAQAAAABAAEAAAAYAAUAAAAAAAEAAAAYAAYAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAAAAAABAAAAAAAZAAEAAAABAAAAAAAZAAIAAAABAAAAAAAZAAMAAAABAAEAAAAZAAQAAAAAAAEAAAAZAAUAAAAAAAAAAAAZAAYAAAAAAAEAAAAZAAcAAAAAAAAAAAAaAAAAAAAAAAEAAAAaAAEAAAABAAEAAAAaAAIAAAABAAEAAAAaAAMAAAAAAAAAAAAaAAQAAAAAAAAAAAAaAAUAAAAAAAEAAAAaAAYAAAAAAAEAAAAaAAcAAAAAAAAAAAAbAAAAAAAAAAEAAAAbAAEAAAAAAAEAAAAbAAIAAAABAAEAAAAbAAMAAAAAAAEAAAAbAAQAAAABAAEAAAAbAAUAAAAAAAEAAAAbAAYAAAAAAAAAAAAbAAcAAAABAAAAAAAcAAAAAAABAAAAAAAcAAEAAAABAAAAAAAcAAIAAAABAAEAAAAcAAMAAAAAAAEAAAAcAAQAAAAAAAAAAAAcAAUAAAAAAAEAAAAcAAYAAAABAAAAAAAcAAcAAAABAAAAAAAdAAAAAAABAAAAAAAdAAEAAAABAAEAAAAdAAIAAAAAAAAAAAAdAAMAAAABAAEAAAAdAAQAAAAAAAEAAAAdAAUAAAAAAAEAAAAdAAYAAAAAAAEAAAAdAAcAAAABAAEAAAAeAAAAAAABAAAAAAAeAAEAAAAAAAAAAAAeAAIAAAABAAAAAAAeAAMAAAABAAEAAAAeAAQAAAAAAAEAAAAeAAUAAAABAAEAAAAeAAYAAAABAAEAAAAeAAcAAAAAAAAAAAAfAAAAAAAAAAAAAAAfAAEAAAAAAAEAAAAfAAIAAAABAAAAAAAfAAMAAAABAAEAAAAfAAQAAAAAAAEAAAAfAAUAAAAAAAEAAAAfAAYAAAAAAAEAAAAfAAcAAAAAAAAAAAAgAAAAAAAAAAEAAAAgAAEAAAAAAAAAAAAgAAIAAAABAAAAAAAgAAMAAAABAAEAAAAgAAQAAAAAAAEAAAAgAAUAAAAAAAEAAAAgAAYAAAABAAAAAAAgAAcAAAABAAEAAAAhAAAAAAABAAAAAAAhAAEAAAABAAEAAAAhAAIAAAABAAAAAAAhAAMAAAAAAAAAAAAhAAQAAAABAAEAAAAhAAUAAAABAAEAAAAhAAYAAAAAAAAAAAAhAAcAAAAAAAAAAAAiAAAAAAABAAAAAAAiAAEAAAAAAAAAAAAiAAIAAAAAAAEAAAAiAAMAAAABAAEAAAAiAAQAAAABAAAAAAAiAAUAAAAAAAAAAAAiAAYAAAAAAAAAAAAiAAcAAAAAAAEAAAAjABoAAAAAAAEAAAAjABkAAAAAAAEAAAAjABgAAAAAAAEAAAAjABcAAAAAAAEAAAAjABYAAAAAAAEAAAAjABUAAAAAAAEAAAAjABQAAAAAAAEAAAAjABMAAAAAAAEAAAAjABIAAAAAAAEAAAAjABEAAAAAAAEAAAAjABAAAAAAAAEAAAAjAA8AAAAAAAEAAAAjAA4AAAAAAAEAAAAjAA0AAAAAAAEAAAAjAAwAAAAAAAEAAAAjAAsAAAAAAAEAAAAjAAoAAAAAAAEAAAAjAAkAAAAAAAEAAAAjAAgAAAAAAAEAAAAjAAcAAAAAAAEAAAAjAAYAAAAAAAEAAAAjAAUAAAAAAAEAAAAjAAQAAAAAAAEAAAAjAAMAAAAAAAEAAAAjAAIAAAAAAAEAAAAjAAEAAAAAAAEAAAAjAAAAAAAAAAEAAAD//wEAAAAAAAEAAAD//wMAAAAAAAEAAAD//wUAAAAAAAEAAAD//wcAAAAAAAEAAAD//wkAAAAAAAEAAAD//wsAAAAAAAEAAAD//w0AAAAAAAEAAAD//w8AAAAAAAEAAAD//xEAAAAAAAEAAAD//xMAAAAAAAEAAAD//xUAAAAAAAEAAAD//xcAAAAAAAEAAAD//xkAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_06fis")
+
+[node name="Foreground" type="TileMapLayer" parent="."]
+visible = false
+tile_set = SubResource("TileSet_o52cs")
+
+[node name="Kobold Jinjo" parent="." instance=ExtResource("5_efk68")]
+current_cell = Vector2i(5, 10)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("5_rarx8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333333
+anchor_top = 0.888889
+anchor_right = 0.611111
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ki7sg")
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_mma61")
+
+[node name="Stats_Button" type="Button" parent="Control/MarginContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 320.0
+offset_bottom = 72.0
+theme_override_colors/font_hover_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/hover = SubResource("StyleBoxTexture_c5xim")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5xim")
+text = "Stats"
+
+[node name="Attack_Button" type="Button" parent="Control/MarginContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 64.0004
+offset_top = -6.10352e-05
+offset_right = 128.0
+offset_bottom = 71.9999
+theme_override_colors/font_hover_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/hover = SubResource("StyleBoxTexture_c5xim")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5xim")
+text = "Attack"
+
+[node name="Move_Button" type="Button" parent="Control/MarginContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 0.000396729
+offset_top = -6.10352e-05
+offset_right = 64.0004
+offset_bottom = 71.9999
+theme_override_colors/font_hover_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/hover = SubResource("StyleBoxTexture_c5xim")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5xim")
+text = "Move"
+
+[node name="Spell_Button" type="Button" parent="Control/MarginContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = -6.10352e-05
+offset_right = 192.0
+offset_bottom = 71.9999
+theme_override_colors/font_hover_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/hover = SubResource("StyleBoxTexture_c5xim")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5xim")
+text = "Spell"
+
+[node name="Other_Button" type="Button" parent="Control/MarginContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = -6.10352e-05
+offset_right = 256.0
+offset_bottom = 71.9999
+theme_override_colors/font_hover_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.576471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/hover = SubResource("StyleBoxTexture_c5xim")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c5xim")
+text = "Other"
+
+[node name="Character Stats" type="NinePatchRect" parent="."]
+visible = false
+offset_left = 704.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("9_8d4ee")
+
+[node name="Stats" type="VBoxContainer" parent="Character Stats"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -126.0
+offset_right = 144.0
+offset_bottom = 80.0
+grow_vertical = 2
+
+[node name="STR" type="Label" parent="Character Stats/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Strength:"
+
+[node name="DEX" type="Label" parent="Character Stats/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Dexterity:"
+
+[node name="CON" type="Label" parent="Character Stats/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Constitution:"
+
+[node name="INT" type="Label" parent="Character Stats/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Intelligence:"
+
+[node name="WIS" type="Label" parent="Character Stats/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Wisdom:"
+
+[node name="CHR" type="Label" parent="Character Stats/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Charisma:"
+
+[node name="Stat Scores" type="VBoxContainer" parent="Character Stats"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 197.0
+offset_right = 186.0
+offset_bottom = 397.0
+
+[node name="STR_Score" type="Label" parent="Character Stats/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="DEX_Score" type="Label" parent="Character Stats/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="CON_Score" type="Label" parent="Character Stats/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="INT_Score" type="Label" parent="Character Stats/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="WIS_Score" type="Label" parent="Character Stats/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="CHR_Score" type="Label" parent="Character Stats/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="Player Stats" type="Label" parent="Character Stats"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.5
+offset_top = 160.0
+offset_right = -58.5
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 25
+text = "Attributes"
+
+[node name="Experience" type="VBoxContainer" parent="Character Stats"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 87.0
+offset_right = 390.0
+offset_bottom = 151.0
+
+[node name="EXP to Level" type="Label" parent="Character Stats/Experience"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Exp to Level:"
+
+[node name="EXP" type="Label" parent="Character Stats/Experience"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Current Exp:"
+
+[node name="Experience Values" type="VBoxContainer" parent="Character Stats"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 88.0
+offset_right = 442.0
+offset_bottom = 152.0
+
+[node name="EXP to Level Value" type="Label" parent="Character Stats/Experience Values"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="EXP Value" type="Label" parent="Character Stats/Experience Values"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Level" type="Label" parent="Character Stats"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 56.0
+offset_right = 363.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Level:"
+
+[node name="Level Variable" type="Label" parent="Character Stats/Level"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Race" type="Label" parent="Character Stats"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 68.0
+offset_right = 96.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Race:"
+
+[node name="GD PC Race" type="Label" parent="Character Stats/Race"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "None"
+
+[node name="Class" type="Label" parent="Character Stats"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 105.0
+offset_right = 94.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Class:"
+
+[node name="GD PC Class" type="Label" parent="Character Stats/Class"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "None"
+
+[node name="Saving Throws Title" type="Label" parent="Character Stats"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 432.0
+offset_right = -40.0
+offset_bottom = 466.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 20
+text = "Saving Throws"
+
+[node name="Saving Throws" type="VBoxContainer" parent="Character Stats"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 148.0
+offset_right = 189.0
+offset_bottom = 310.0
+grow_vertical = 2
+
+[node name="Spell" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Spell:"
+horizontal_alignment = 1
+
+[node name="Paralyzation" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Paralyzation:"
+horizontal_alignment = 1
+
+[node name="Rod Staff Wand" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Rod, Staff, Wand:"
+horizontal_alignment = 1
+
+[node name="Petrify Poly" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Petrification/Polymorph:"
+horizontal_alignment = 1
+
+[node name="Breath Wpn" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Breath Weapon:"
+horizontal_alignment = 1
+
+[node name="Poison" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Poison:"
+horizontal_alignment = 1
+
+[node name="Death" type="Label" parent="Character Stats/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "Death:"
+horizontal_alignment = 1
+
+[node name="Saving Throw Scores" type="VBoxContainer" parent="Character Stats"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 473.0
+offset_right = 209.0
+offset_bottom = 630.0
+
+[node name="Spell Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "19"
+
+[node name="Paralyzation Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "16"
+
+[node name="Rod Staff Wand Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "18"
+
+[node name="Petrify Poly Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "17"
+
+[node name="Breath Wpn Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "20"
+
+[node name="Poison Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "16"
+
+[node name="Death Score" type="Label" parent="Character Stats/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 16
+text = "16"
+
+[node name="Armor Class" type="Label" parent="Character Stats"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 171.0
+offset_right = 378.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Armor Class:"
+
+[node name="AC Score" type="Label" parent="Character Stats/Armor Class"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 162.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Max HP" type="Label" parent="Character Stats"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 214.0
+offset_right = 421.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Maximum Hit Points:"
+
+[node name="Max HP Score" type="Label" parent="Character Stats/Max HP"]
+layout_mode = 0
+offset_left = 221.0
+offset_right = 232.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Current HP" type="Label" parent="Character Stats/Max HP"]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 213.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "Current Hit Points:"
+
+[node name="Current HP Score" type="Label" parent="Character Stats/Max HP/Current HP"]
+layout_mode = 0
+offset_left = 221.0
+offset_right = 232.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3la1u")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Character Sheet Title" type="Label" parent="Character Stats"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.0
+offset_right = 161.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_06fis")
+theme_override_font_sizes/font_size = 40
+text = "Character Name"
+
+[connection signal="unit_deselected" from="." to="Control" method="_on_main_unit_deselected"]
+[connection signal="unit_selected" from="." to="Control" method="_on_main_unit_selected"]
+[connection signal="Attack_Requested" from="Control" to="." method="_on_control_attack_requested"]
+[connection signal="Move_Requested" from="Control" to="." method="_on_control_move_requested"]
+[connection signal="Other_Requested" from="Control" to="." method="_on_control_other_requested"]
+[connection signal="Spell_Requested" from="Control" to="." method="_on_control_spell_requested"]
+[connection signal="pressed" from="Control/MarginContainer/NinePatchRect/Stats_Button" to="Control" method="_on_stats_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/NinePatchRect/Attack_Button" to="Control" method="_on_attack_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/NinePatchRect/Move_Button" to="Control" method="_on_move_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/NinePatchRect/Spell_Button" to="Control" method="_on_spell_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/NinePatchRect/Other_Button" to="Control" method="_on_other_button_pressed"]

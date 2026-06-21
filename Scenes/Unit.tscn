@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://tfptk6sms8x4"]
+
+[ext_resource type="Script" uid="uid://kdaotuwi882d" path="res://Scripts/Incomplete Sheets/Unit.gd" id="1_qk68r"]
+[ext_resource type="Resource" uid="uid://8govmfgytdwy" path="res://Battle System/Units/Unit Compendium/Kobold.tres" id="2_8mmvs"]
+[ext_resource type="Texture2D" uid="uid://davh30uptx5p6" path="res://Images/Tiles/Kobold*.png" id="2_k67iv"]
+[ext_resource type="Script" uid="uid://7sap1ffot5hl" path="res://Scripts/Incomplete Sheets/Kobold.gd" id="3_8mmvs"]
+
+[node name="Unit" type="Node2D" groups=["units"]]
+script = ExtResource("1_qk68r")
+character_data = ExtResource("2_8mmvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["units"]]
+visibility_layer = 514
+texture = ExtResource("2_k67iv")
+script = ExtResource("3_8mmvs")

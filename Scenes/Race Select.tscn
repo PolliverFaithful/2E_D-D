@@ -1,0 +1,401 @@
+[gd_scene load_steps=11 format=3 uid="uid://bho3020ecmwfx"]
+
+[ext_resource type="Texture2D" uid="uid://dlj8r2vigna78" path="res://Images/Backgrounds/parchmentBasic.png" id="1_s5pfk"]
+[ext_resource type="Script" uid="uid://dqaq2ia6lb8ro" path="res://Scripts/Completed Sheets/Race_Select.gd" id="1_t2lrh"]
+[ext_resource type="FontFile" uid="uid://csbvktjhamhsr" path="res://Fonts/LinLibertine_RI.otf" id="2_gdq3k"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="4_1ah81"]
+[ext_resource type="Texture2D" uid="uid://b6jrk5oi4yrw5" path="res://Images/Buttons/arrowHead.png" id="5_1ah81"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i83cd"]
+texture = ExtResource("1_s5pfk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0huu"]
+bg_color = Color(0.647059, 0.603922, 0.407843, 0.439216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkwtt"]
+bg_color = Color(0, 0, 0, 0.756863)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ordvm"]
+
+[sub_resource type="GDScript" id="GDScript_x630o"]
+script/source = "extends Button
+"
+
+[node name="Race Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2lrh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i83cd")
+
+[node name="Race Options" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 54.0
+offset_right = 286.0
+offset_bottom = 268.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/panel = SubResource("StyleBoxFlat_l0huu")
+theme_override_styles/hovered_selected = SubResource("StyleBoxFlat_kkwtt")
+item_count = 6
+item_0/text = "Human"
+item_1/text = "Half-Elf"
+item_2/text = "Elf"
+item_3/text = "Dwarf"
+item_4/text = "Gnome"
+item_5/text = "Halfling"
+
+[node name="Human Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 496.0
+offset_top = 171.0
+offset_right = 1135.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "     Despite hailing primarily from Tyber & the Rimansse, Humans are ubiquitous across the world. A 
+proven combination of tenacity, ambition, and fool-hardiness has enmeshed Humans into every 
+cultural hotspot and backwater village. Such diversity has given Humans a unique outlook on life
+and where it may lead them.
+     Other races tend to view Humans on the whole as short-sighted and a touch arrogant. Elves, in
+particular, see Humans as a meddlesome and prideful bunch. A war between the Human Kingdom of
+Tyber and The Elvish King Ari'Akai was fought in recent memory. Though it ended in near stalemate,
+the Elves remain embittered.
+     Dwarves and Gnomes harbor no such blood feud and enjoy an opportunistic relationship with
+the Human Kingdoms. Foodstuffs and precious earths are of undeniable value and are happily 
+exchanged when a mutually beneficial arrangement can be made. Gnomes, in particular, enjoy
+collaboration with those Humans fortunate enough to wield magic. Many an arcane breakthrough
+has been achieved by this union of mental ingenuity.
+     Halflings are happily integrated into Human civilization. A shared joy of singing, dancing, ribald
+jokes, enebriation, and general hullabaloo made the races fast friends eons ago. Nowadays it is
+rare to find a group of Human travelers without a Halfling or two in tow. Such companionship has 
+mixed their oral histories so thouroughly that nearly every folk hero of one has a mirror on the other
+side. "
+
+[node name="Human Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 334.0
+offset_right = 462.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "Humans gain no inherent stat bonuses, as they vary so much person
+to person. However, they do gain two benefits:
+
+-- A Bonus Language (Due to proximity growing up)
+
+-- 2 Bonus General Proficiencies (Due to diversity in culture & work)
+
+"
+
+[node name="Character Selection Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 19.0
+offset_right = 1083.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1ah81")
+theme_override_font_sizes/font_size = 50
+text = "Character Selection"
+
+[node name="Half-Elf Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 496.0
+offset_top = 171.0
+offset_right = 1135.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "     A blend of Human and Elf, Half-Elves are a robust athletic and handsome people. Phenotypically 
+they resemble Humans more than Elves, but a study of the face and build reveal the fairer race. This 
+Human lean applies to their life-span as well. 160 years may be two lifespans by Human standards,
+but it pales to the 450 years of the Elf. In general, a Half-Elf has the curiosity, inventiveness, 
+and ambition of Human ancestry, and the refined senses, love of nature, and artistic tastes of 
+Elven ancestry.
+     Due to the protracted conflict between Elves and Humans, much is assumed of a Half-Elf by the
+very nature of his/her existence. Having no exclusive settlements of their own, Half-Elves are found
+living amongst Elves and Humans. They are often familially estranged and put-down due to
+whichever half of them their neighbors are not. This leads many a Half-Elf to a life of wander.
+     This lack of community tends to make Half-Elves self sufficient and mild mannered. Vocal Half-
+Elves have seen how easily attention can turn to persecution and most are happy to live light and
+move on when the wind begins to blow against them. For this reason, Half-Elves take friendship
+very seriously. Unused to benefit of the doubt, displays of kindness strike them deeply.
+     It is with Dwarves, Gnomes, and Halflings that Half-Elves are most at ease. Without overarching
+cultural expectations, Half-Elves are able to relinquish the defenses so often needed among their
+half kindred. Though such company provides a nice reprise, most Half-Elves hold on to a hope that 
+one day they may prove themselves to their original community."
+
+[node name="Half-Elf Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 334.0
+offset_right = 465.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "Though Half-Elves gain no Bonus Stats, they do enjoy other Benefits:
+
+-- 30% Resistance to Sleep Spells
+
+-- 30% Resistance to Charm Spells
+
+-- 60ft of Infravsion
+
+-- +2 on Observation rolls
+
+-- Proficiency in One of: Hunting, Herbalism, Fishing, Direction Sense"
+
+[node name="Gnome Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 481.0
+offset_top = 144.0
+offset_right = 1136.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "     Slightly shorter and a bit less stocky than Dwarves, Gnomes are a peculiar and somewhat vanishing 
+race. Often deeply mired in a passionate pursuit, it is uncommon to find a Gnome whiling away the
+hours in a common room or village green. This is not to say that Gnomes are inherently unsocial but
+rather that a Gnome rarely affords itself time to gossip and fraternize.
+     Originally of the Underdark, the Gnomish race grew alongside the Dwarves. There, in the deep 
+ravines beneath the mountains, the two became certain and inseparable allies. Gnomes and Dwarves 
+are now nearly fraternal in interaction; each quick to adopt their traditional role when trouble arises.
+     For the Gnome's part, this meant ingenuity. As Dwarves are unable to interact with magic, the 
+responsibility of teasing apart the arcane fell to the Gnomes. Such a devotion left an indelible mark 
+and the creativity required to craft magical components bled into other scholarly pursuits.
+     From engineering aqueducts and elevators to classifying and codifying various crystalline 
+structures, Gnomes have authored countless detailed manuscripts. Gnomish culture has evolved to 
+encourage such endeavors and prominent familial lines are backed by volume after volume of 
+academic toil. Those without such pedigree can be found far afield, working with single-minded fervor 
+to publish original findings.
+     Such abstract work requires a life divorced from the everyday labors of crop cultivation and the 
+gathering of timber. Therefore Gnomes are nearly always found in metropolitan areas. Places of 
+stability, where rare components can be ordered and collaborative research quickly couriered by 
+like-minds, are where Gnomes thrive. For Gnomes whom are able to achieve these works, their 
+brilliance, and the wealth that comes alongside it, is welcomed most anywhere in the world."
+
+[node name="Gnome Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 326.0
+offset_right = 456.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "Bonus Scores and Abilities include:
+
+-- +1 Intelligence, -1 Wisdom
+
+-- 60ft of Infravision
+
+--Proficiency in Reading/Writing
+
+--Proficiency in one of  Gem-Cutting, Appraisal, Engineering
+
+-- One Extra Use of any Magical Item with Charges
+
+--25% to Identify Magical Scroll if not Magic-User
+   Extra 25% if Magic-User"
+
+[node name="Elf Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 482.0
+offset_top = 142.0
+offset_right = 1131.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "     With high cheek bones, pointed ears and vulpine jawlines, the visage of an Elf is unmistakable. 
+Longer-lived than any other race, often by hundreds of years, Elves are the keepers of history; 
+and therefore, the keepers of the world's collective conscience. No other race can reach back through 
+time and recall the mistakes of past civilizations. The Elves alone are certain that, in a past eon, the 
+world was different. The forests were deeper. The wildlife reasoned. The air hummed with magic. 
+Something undefinable was lost and every Elf seems to carry that memory forward, wary that it may 
+erode further.
+     To the other races, this makes Elves appear standoffish, as if their mind is preoccupied; engaged in 
+an inner dialogue with itself. Humans are not afraid to criticize this haughty and superior behavior. 
+The Elves meet this criticism, more often than not, with indifference. This indifference stretches to 
+negotiations both business and hostile. Elves ever willing to wait for a more favorable circumstance or 
+for the other party to finally see the wisdom of their argument. Such Elvish prudence easily resembles 
+stubbornness.
+     Though Elvish merchants do not command the largest fleets and Elvish cities do not boast the 
+greatest populations, Elves control the majority of the world's most powerful places and institutions. 
+Here too, their prudence can just as easily be interpreted as inaction. Critics declare Elvish leadership 
+that of a caretaker, rather than that of a visionary.
+     Elvish mystique does still run strong and Elves command inherent respect most anywhere they go. 
+Elves are near universally well-educated, well-mannered, and articulate to the layman. Internal Elvish 
+culture demands such standards and it doesn't hurt that most Elves are nearing 60 before they make 
+an independent life for themselves."
+
+[node name="Elf Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 334.0
+offset_right = 462.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "Bonus Scores and Abilities include:
+
+-- +1 Dexterity, -1 Constitution
+
+-- 90% Resistance to Sleep & Charm
+
+-- +1 Observation
+
+-- 60ft of Infravision
+
+-- +1 to-hit with Bows, Short Swords, Long Swords"
+
+[node name="Dwarf Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 474.0
+offset_top = 131.0
+offset_right = 1134.0
+offset_bottom = 590.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "     Tireless, and hardy, the average Dwarf makes their living on honest tasks of definite value. Whether 
+it's slabs from a quarry, timber from a logging camp, or metal goods hammered from fired ore, a Dwarf 
+finds comfort that his/her work affects the world with visual certainty. This is not to say that their work 
+is crude, on the contrary, crafted Dwarven goods and material tend to be of the highest quality and 
+Dwarves make certain that such quality is properly compensated.
+     Dwarves hail from deep underground in the Underdark. Their history is replete with the warfare that 
+such dangerous origins necessitate. A warrior's ethic is celebrated culture-wide and tales of valor 
+dominate Dwarven folklore. In battle, a Dwarf will rarely flee, and a company of Dwarves will fall to a 
+man, even if the odds against it are insurmountable. This quality of fighter, combined with the 
+exceptional quality of their arms and armaments, make a Dwarven legion one of the most formidable 
+units that can be fielded in a battle.
+     Dwarves are also a long-lived race. With many Dwarves reaching ages of 250 before succumbing to 
+old age. Their stout and stocky builds keep them in good health, and even an aged Dwarf makes for a 
+sturdy soldier deep into his/her twilight years. There are many myths that this unnatural strength stems 
+from a magical property innate in a Dwarf's biology, and though nothing has been proven, it is well 
+known that Dwarves cannot access the arcane. Perhaps such prohibition from magic is the Dwarf's 
+payment for the many benefits they otherwise enjoy.
+     Dwarves show no resentment towards this limitation, they have forged strong bonds with Gnomes 
+whom they trust with whatever magical discoveries are made in the Underdark. To the other races, 
+Dwarves are a known entity; dour, taciturn, a hard laborer, a shrewd barter, and a tough scrap. 
+To Dwarves, the other races are worthy of suspicion, until proven otherwise."
+
+[node name="Dwarf Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 334.0
+offset_right = 462.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "Bonus Scores and Abilities include:
+
+-- +1 Constitution, -1 Charisma
+
+-- +3 All Saving Throws
+
+-- +25 Weight Allow
+
+-- 60ft of Infravision
+
+-- Proficiency in one of: Mining, Stonemasonry, Blacksmithing"
+
+[node name="Halfling Flavor Text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 487.0
+offset_top = 155.0
+offset_right = 1141.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "     Quick-witted and light on their feet, Halflings thrive in social settings. Due, perhaps, to their small 
+stature, Halflings tend to have big personalities. Whether it be wise-cracks, a juggling act, or prowess 
+with a flute and a lute, most Halflings have a reliable to way to break the ice and lighten the mood. 
+Long before most histories can recall, Halflings and Humans found themselves benefiting from the 
+other's company. Nowadays if a band of Humans doesn't have at least one Halfling in tow, it is an 
+ill-fitted company indeed.
+     Halflings are not just hangers-on however, they have a vibrant pastoral tradition and a seasonal 
+festival at a Halfling village is sure to liven even the most melancholy of Elves. The vegetable gardens 
+of such settlements are an art form in and of themselves. The stews, casseroles, and jarred goods created 
+from their harvest could contend with many a royal's dinner spread. Famous too are Halfling 
+leather-works and Halfling tanners may be the most accomplished the world over.
+     Rarely called upon to field an army, Halflings nonetheless found a niche as scouts and ambush 
+auxillaries. Such battlefield tactics apply to the individual as well. Dagger, dart, and well-oiled 
+moccasins are the compliment of your average Halfling for hire.
+     Ultimately Halflings are not an overly-ambitious lot. Halfling desires are understandable: shelter 
+from the elements, safety from enemies, land to cultivate, and community to raise one's family within. 
+With such quaint demands, Halflings are welcomed in all civilized kingdoms. Halfling Hamlets, most 
+often located within partially wooded rolling hills, provide a peaceful and familiar respite no matter
+ where in the world they may be found."
+
+[node name="Halfling Bonuses" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 334.0
+offset_right = 462.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gdq3k")
+text = "Bonus Scores and Abilities include:
+
+-- +1 Dexterity, -1 Strength
+
+-- +3 Saving Throw vs Poison
+
+-- 30ft Infravision
+
+-- +1 Charm
+
+-- +1 to-hit Throwing Weapons & Slings"
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -64.0
+offset_right = 63.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.55867
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_1ah81")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ordvm")
+icon = ExtResource("5_1ah81")
+script = SubResource("GDScript_x630o")
+
+[connection signal="item_clicked" from="Race Options" to="." method="_on_item_list_item_clicked"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

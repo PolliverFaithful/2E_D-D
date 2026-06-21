@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://8govmfgytdwy"]
+
+[ext_resource type="Script" uid="uid://dna7t38ueytx7" path="res://Scripts/Completed Sheets/Full Stats Page.gd" id="1_fu7sg"]
+
+[resource]
+script = ExtResource("1_fu7sg")
+Experience = {
+"Current_XP": 0,
+"Level": 1,
+"XP_To_Level": 1000
+}
+Combat_Stats = {
+"AC": 10,
+"Current_HP": 4,
+"Max_HP": 4,
+"THAC0": 20
+}
+Ability_Scores = {
+"CHR": 9,
+"CON": 9,
+"DEX": 9,
+"INT": 9,
+"STR": 11,
+"WIS": 9
+}
+Saving_Throws = {
+"Breath_Weapon_Save": 20,
+"Death_Save": 16,
+"Paralyzation_Save": 16,
+"Petrification_Polymorph_Save": 17,
+"Poison_Save": 16,
+"Rod_Staff_Wand_Save": 18,
+"Spell_Save": 19
+}
+Race = "Kobold"
+Class = "Thief"
+Proficiency = {
+"Agriculture": 0,
+"Ancient History": 0,
+"Animal Handling": 0,
+"Animal Lore": 1,
+"Animal Training": 0,
+"Appraisal": 0,
+"Armorer": 0,
+"Artistic Ability": 0,
+"Astrology": 0,
+"Blacksmithing": 0,
+"Blind_Fighting": 0,
+"Bowyer_Fletcher": 0,
+"Brewing": 0,
+"Carpentry": 0,
+"Charioteering": 0,
+"Cobbling": 0,
+"Cooking": 0,
+"Dancing": 0,
+"Direction_Sense": 0,
+"Disguise": 0,
+"Endurance": 0,
+"Engineering": 0,
+"Etiquette": 0,
+"Fire_Building": 0,
+"Fishing": 1,
+"Forgery": 0,
+"Gaming": 0,
+"Gem_Cutting": 0,
+"Healing": 0,
+"Heraldry": 0,
+"Herbalism": 0,
+"Hunting": 1,
+"Juggling": 0,
+"Jumping": 0,
+"Languages_Ancient": 0,
+"Leatherworking": 0,
+"Local_History": 0,
+"Mining": 0,
+"Mountaineering": 0,
+"Musical_Instrument": 0,
+"Navigation": 0,
+"Pottery": 0,
+"Reading_Lips": 0,
+"Reading_Writing": 0,
+"Religion": 0,
+"Riding": 0,
+"Rope_Use": 0,
+"Running": 0,
+"Seamanship": 0,
+"Set_Snares": 0,
+"Singing": 0,
+"Spellcraft": 0,
+"Stonemasonry": 0,
+"Survival": 1,
+"Swimming": 1,
+"Tailor_Seamstress": 0,
+"Tightrope_Walking": 0,
+"Tracking": 0,
+"Tumbling": 0,
+"Ventriloquism": 0,
+"Weaponsmithing": 0,
+"Weather_Sense": 0,
+"Weaving": 1
+}
+XP_To_Level = 0
+To_Hit_Adj = 0
+Dam_Adj = 0
+Bench = 0
+Force_Door = 0
+BBLG = 0
+Carry_Weight = 0
+Rxn_Adj = 0
+Ranged_Adj = 0
+AC_Adj = 0
+HP_Adj = 0
+System_Shock = 0
+Resurrection_Survival = 0
+Poison_Save = 0
+Number_of_Languages = 0
+Number_of_Proficiencies = 0
+Spell_Level = 0
+Chance_to_Learn = 0
+Max_Number_of_Spells = 0
+Magic_Defense_Adj = 0
+Bonus_Spells = 0
+Spell_Fail = 0
+Max_Hench = 0
+Loyalty_Adj = 0
+CHR_Rxn_Adj = 0
+metadata/_custom_type_script = "uid://dna7t38ueytx7"

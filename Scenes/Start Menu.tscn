@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://rkoh3apnx25h"]
+
+[ext_resource type="Script" uid="uid://ci26mv1j77hm8" path="res://Scripts/Completed Sheets/Main_Menu.gd" id="1_v3cnt"]
+[ext_resource type="Texture2D" uid="uid://gl5xe10rvy2k" path="res://Images/Backgrounds/parchmentAncient.png" id="2_5j06u"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="3_5j06u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4bpr4"]
+texture = ExtResource("2_5j06u")
+modulate_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph78w"]
+
+[sub_resource type="GDScript" id="GDScript_4bpr4"]
+script/source = "extends Button
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y414"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81s0d"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3cnt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4bpr4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.972222
+anchor_top = 0.494599
+anchor_right = 0.972222
+anchor_bottom = 0.494599
+offset_left = -235.0
+offset_top = -120.5
+offset_bottom = 120.5
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.0014126
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5j06u")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ph78w")
+text = "Begin"
+script = SubResource("GDScript_4bpr4")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5j06u")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2y414")
+text = "Exit"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5j06u")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_81s0d")
+text = "Settings"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Begin_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Settings_pressed"]

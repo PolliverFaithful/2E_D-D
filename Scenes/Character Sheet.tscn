@@ -1,0 +1,471 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk4briafh316p"]
+
+[ext_resource type="Texture2D" uid="uid://gl5xe10rvy2k" path="res://Images/Backgrounds/parchmentAncient.png" id="1_41mij"]
+[ext_resource type="Script" uid="uid://dsb8k040yapxh" path="res://Scenes/Character_Sheet.gd" id="1_mncro"]
+[ext_resource type="FontFile" uid="uid://dp8nvb2jpcshq" path="res://Fonts/EagleLake-Regular.ttf" id="3_62je1"]
+[ext_resource type="FontFile" uid="uid://csbvktjhamhsr" path="res://Fonts/LinLibertine_RI.otf" id="4_mncro"]
+[ext_resource type="Texture2D" uid="uid://b6jrk5oi4yrw5" path="res://Images/Buttons/arrowHead.png" id="5_vqf2j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyveb"]
+
+[sub_resource type="GDScript" id="GDScript_ha4xe"]
+script/source = "extends Button
+"
+
+[node name="Character Sheet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mncro")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_41mij")
+
+[node name="Stats" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -102.0
+offset_right = 156.0
+offset_bottom = 104.0
+grow_vertical = 2
+
+[node name="STR" type="Label" parent="NinePatchRect/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Strength:"
+
+[node name="DEX" type="Label" parent="NinePatchRect/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Dexterity:"
+
+[node name="CON" type="Label" parent="NinePatchRect/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Constitution:"
+
+[node name="INT" type="Label" parent="NinePatchRect/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Intelligence:"
+
+[node name="WIS" type="Label" parent="NinePatchRect/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Wisdom:"
+
+[node name="CHR" type="Label" parent="NinePatchRect/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Charisma:"
+
+[node name="Stat Scores" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 221.0
+offset_right = 198.0
+offset_bottom = 421.0
+
+[node name="STR_Score" type="Label" parent="NinePatchRect/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="DEX_Score" type="Label" parent="NinePatchRect/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="CON_Score" type="Label" parent="NinePatchRect/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="INT_Score" type="Label" parent="NinePatchRect/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="WIS_Score" type="Label" parent="NinePatchRect/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="CHR_Score" type="Label" parent="NinePatchRect/Stat Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "9"
+
+[node name="Player Stats" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -547.5
+offset_top = 184.0
+offset_right = -398.5
+offset_bottom = 226.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_62je1")
+theme_override_font_sizes/font_size = 25
+text = "Attributes"
+
+[node name="Experience Variables" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 1077.0
+offset_top = 42.0
+offset_right = 1121.0
+offset_bottom = 106.0
+
+[node name="EXP to Level Variable" type="Label" parent="NinePatchRect/Experience Variables"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="EXP Variable" type="Label" parent="NinePatchRect/Experience Variables"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Experience" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 41.0
+offset_right = 1069.0
+offset_bottom = 105.0
+
+[node name="EXP to Level" type="Label" parent="NinePatchRect/Experience"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Exp to Level:"
+
+[node name="EXP" type="Label" parent="NinePatchRect/Experience"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Current Exp:"
+
+[node name="Level" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 10.0
+offset_right = 1042.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Level:"
+
+[node name="Level Variable" type="Label" parent="NinePatchRect/Level"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Race" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 68.0
+offset_right = 96.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Race:"
+
+[node name="GD PC Race" type="Label" parent="NinePatchRect/Race"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "None"
+
+[node name="Class" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 105.0
+offset_right = 94.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Class:"
+
+[node name="GD PC Class" type="Label" parent="NinePatchRect/Class"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -1.0
+offset_right = 76.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "None"
+
+[node name="Saving Throws Title" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 306.0
+offset_top = 277.0
+offset_right = 517.0
+offset_bottom = 322.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_62je1")
+theme_override_font_sizes/font_size = 25
+text = "Saving Throws"
+
+[node name="Saving Throws" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 845.0
+offset_top = -1.0
+offset_right = 1128.0
+offset_bottom = 233.0
+grow_vertical = 2
+
+[node name="Spell" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Spell:"
+horizontal_alignment = 1
+
+[node name="Paralyzation" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Paralyzation:"
+horizontal_alignment = 1
+
+[node name="Rod Staff Wand" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Rod, Staff, Wand:"
+horizontal_alignment = 1
+
+[node name="Petrify Poly" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Petrification/Polymorph:"
+horizontal_alignment = 1
+
+[node name="Breath Wpn" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Breath Weapon:"
+horizontal_alignment = 1
+
+[node name="Poison" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Poison:"
+horizontal_alignment = 1
+
+[node name="Death" type="Label" parent="NinePatchRect/Saving Throws"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Death:"
+horizontal_alignment = 1
+
+[node name="Saving Throw Scores" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 324.0
+offset_right = 1148.0
+offset_bottom = 558.0
+
+[node name="Spell Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "19"
+
+[node name="Paralyzation Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="Rod Staff Wand Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "18"
+
+[node name="Petrify Poly Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "17"
+
+[node name="Breath Wpn Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "20"
+
+[node name="Poison Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="Death Score" type="Label" parent="NinePatchRect/Saving Throw Scores"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "16"
+
+[node name="Max HP" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 893.0
+offset_top = 171.0
+offset_right = 1106.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Maximum Hit Points:"
+
+[node name="Max HP Score" type="Label" parent="NinePatchRect/Max HP"]
+layout_mode = 0
+offset_left = 221.0
+offset_right = 232.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Armor Class" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 128.0
+offset_right = 1063.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "Armor Class:"
+
+[node name="AC Score" type="Label" parent="NinePatchRect/Armor Class"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 162.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mncro")
+theme_override_font_sizes/font_size = 25
+text = "-"
+
+[node name="Character Sheet Title" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.0
+offset_right = 155.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_62je1")
+theme_override_font_sizes/font_size = 40
+text = "Character Name"
+
+[node name="Next" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -65.9999
+offset_right = 62.0
+offset_bottom = -1.99994
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.55867
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_62je1")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wyveb")
+icon = ExtResource("5_vqf2j")
+script = SubResource("GDScript_ha4xe")
